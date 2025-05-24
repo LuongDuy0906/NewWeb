@@ -1,3 +1,16 @@
+function imgGallery() {
+  const mainImg = document.querySelector('.details__img'),
+  smallImg = document.querySelectorAll('.details__small-img');
+
+  smallImg.forEach((img) => {
+    img.addEventListener('click', function(){
+      mainImg.src = this.src;
+    })
+  })
+}
+
+imgGallery();
+
 var swiperCategories = new Swiper(".categories__container", {
     spaceBetween: 24,
     loop: true,
@@ -43,7 +56,6 @@ var swiperProducts = new Swiper(".new__container", {
       },
   },
 });
-
 
 const tabs = document.querySelectorAll('[data-target]'),
   tabContents = document.querySelectorAll('[content]');
