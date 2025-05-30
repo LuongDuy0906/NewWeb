@@ -34,7 +34,7 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="" class="nav__link">Home</a>
+                        <a href="home.html" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
                         <a href="shop.html" class="nav__link">Shop</a>
@@ -43,7 +43,7 @@
                         <a href="" class="nav__link">My Account</a>
                     </li>
                     <li class="nav__item">
-                        <a href="" class="nav__link">Compare</a>
+                        <a href="compare.html" class="nav__link">Compare</a>
                     </li>
                     <li class="nav__item">
                         <a href="login-register.html" class="nav__link">Login</a>
@@ -83,7 +83,90 @@
             <div class="checkout__container container grid">
                 <div class="checkout__group">
                     <h3 class="section__title">Thông tin đơn hàng</h3>
-                    <form action="" class="form grid"></form>
+                    <form action="" class="form grid">
+                        <input type="text" placeholder="Tên" class="form__input">
+                        <input type="text" placeholder="Địa chỉ" class="form__input">
+                        <input type="text" placeholder="Thành phố" class="form__input">
+                        <input type="text" placeholder="Quốc gia" class="form__input">
+                        <input type="text" placeholder="Mã vận chuyển" class="form__input">
+                        <input type="text" placeholder="Số điện thoại" class="form__input">
+                        <input type="email" placeholder="Email" class="form__input">
+                        <h3 class="checkout__title">Thông tin bổ sung</h3>
+                        <textarea name="" placeholder="Ghi chú" id="" cols="30" rows="10" class="form__input textarea"></textarea>
+                    </form>
+                </div>
+                <div class="checkout__group">
+                    <h3 class="section__title">Thông tin sản phẩm</h3>
+                    <table class="order__table">
+                        <tr>
+                            <th colspan="2">Sản phẩm</th>
+                            <th>Tổng cộng</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="assets/img/product-1-2.jpg" alt="" class="order__img">
+                            </td>
+                            <td>
+                                <h3 class="table__title">Yidarton Women Summer Blue</h3>
+                                <p class="table__quantity">x 2</p>
+                            </td>
+                            <td>
+                                <span class="table__price">$180.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="assets/img/product-7-2.jpg" alt="" class="order__img">
+                            </td>
+                            <td>
+                                <h3 class="table__title">Women's Short Sleeve Loose</h3>
+                                <p class="table__quantity">x 2</p>
+                            </td>
+                            <td>
+                                <span class="table__price">$35.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="assets/img/product-2-1.jpg" alt="" class="order__img">
+                            </td>
+                            <td>
+                                <h3 class="table__title">LDB MOON Women Summer</h3>
+                                <p class="table__quantity">x 1</p>
+                            </td>
+                            <td>
+                                <span class="table__price">$65.00</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="order__subtitle">Tạm tính</span></td>
+                            <td colspan="2"><span class="table__price">$280.00</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="order__subtitle">Phí vận chuyển</span></td>
+                            <td colspan="2"><span class="table__price">Miễn phí vận chuyển</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="order__subtitle">Tổng thanh toán</span></td>
+                            <td colspan="2"><span class="order__grand-total">$280.00</span></td>
+                        </tr>
+                    </table>
+                    <div class="payment__methods">
+                        <h3 class="checkout__title payment__title">Phương pháp thanh toán</h3>
+                        <div class="payment__option flex">
+                            <input type="radio" name="radio" class="payment__input">
+                            <label for="" class="payment__label">Chuyển khoản ngân hàng</label>
+                        </div>
+                        <div class="payment__option flex">
+                            <input type="radio" name="radio" class="payment__input">
+                            <label for="" class="payment__label">COD</label>
+                        </div>
+                        <div class="payment__option flex">
+                            <input type="radio" name="radio" class="payment__input">
+                            <label for="" class="payment__label">Paypal</label>
+                        </div>
+                    </div>
+                    <button class="btn btn--md">Đặt hàng</button>
                 </div>
             </div>
         </section>
