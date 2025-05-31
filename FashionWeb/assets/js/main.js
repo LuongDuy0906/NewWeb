@@ -1,3 +1,7 @@
+const navMenu = document.getElementById('nav-menu'),
+navToggle = document.getElementById('nav-toggle'),
+navClose = document.getElementById('nav-close');
+
 function imgGallery() {
   const mainImg = document.querySelector('.details__img'),
   smallImg = document.querySelectorAll('.details__small-img');
