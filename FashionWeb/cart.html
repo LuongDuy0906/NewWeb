@@ -48,20 +48,21 @@
                 </ul>
     
                 <div class="header__search">
-                    <input type="text" placeholder="Seacrh for items..." class="form__input">
+                    <input type="text" id="search-input" placeholder="Seacrh for items..." class="form__input">
                     <button class="search__btn">
                         <img src="assets/img/search.png" alt="">
                     </button>
+                    <div id="search-results" class="search__dropdown"></div>
                 </div>
             </div>
             <div class="header__user-actions">
                 <a href="wishlist.html" class="header__action-btn">
                     <img src="assets/img/icon-heart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
                 <a href="cart.html" class="header__action-btn">
                     <img src="assets/img/icon-cart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
             </div>
         </nav>
@@ -79,71 +80,75 @@
         <section class="cart section--lg container">
             <div class="table__container">
                 <table class="table">
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                        <th>Remove</th>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/product-1-2.jpg" alt="" class="table__img"></td>
-                        <td>
-                            <h3 class="table__title">J.Crew Mercantile Women's Short-Sleeve</h3>
-                            <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
-                        </td>
-                        <td>
-                            <span class="table__price">$110</span>
-                        </td>
-                        <td>
-                            <input type="number" value="3" class="quantity">
-                        </td>
-                        <td>
-                            <span class="table__subtotal">$220</span>
-                        </td>
-                        <td>
-                            <i class="fi fi-rs-trash table__trash"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/product-7-1.jpg" alt="" class="table__img"></td>
-                        <td>
-                            <h3 class="table__title">Amazon Essentials Women's Tank</h3>
-                            <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
-                        </td>
-                        <td>
-                            <span class="table__price">$110</span>
-                        </td>
-                        <td>
-                            <input type="number" value="3" class="quantity">
-                        </td>
-                        <td>
-                            <span class="table__subtotal">$220</span>
-                        </td>
-                        <td>
-                            <i class="fi fi-rs-trash table__trash"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/img/product-2-1.jpg" alt="" class="table__img"></td>
-                        <td>
-                            <h3 class="table__title">Amazon Brand - Daily Ritual Women's Jersey</h3>
-                            <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
-                        </td>
-                        <td>
-                            <span class="table__price">$110</span>
-                        </td>
-                        <td>
-                            <input type="number" value="3" class="quantity">
-                        </td>
-                        <td>
-                            <span class="table__subtotal">$220</span>
-                        </td>
-                        <td>
-                            <i class="fi fi-rs-trash table__trash"></i>
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body">
+                        <!---<tr>
+                            <td><img src="assets/img/product-1-2.jpg" alt="" class="table__img"></td>
+                            <td>
+                                <h3 class="table__title">J.Crew Mercantile Women's Short-Sleeve</h3>
+                                <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
+                            </td>
+                            <td>
+                                <span class="table__price">$110</span>
+                            </td>
+                            <td>
+                                <input type="number" value="3" class="quantity">
+                            </td>
+                            <td>
+                                <span class="table__subtotal">$220</span>
+                            </td>
+                            <td>
+                                <i class="fi fi-rs-trash table__trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="assets/img/product-7-1.jpg" alt="" class="table__img"></td>
+                            <td>
+                                <h3 class="table__title">Amazon Essentials Women's Tank</h3>
+                                <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
+                            </td>
+                            <td>
+                                <span class="table__price">$110</span>
+                            </td>
+                            <td>
+                                <input type="number" value="3" class="quantity">
+                            </td>
+                            <td>
+                                <span class="table__subtotal">$220</span>
+                            </td>
+                            <td>
+                                <i class="fi fi-rs-trash table__trash"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="assets/img/product-2-1.jpg" alt="" class="table__img"></td>
+                            <td>
+                                <h3 class="table__title">Amazon Brand - Daily Ritual Women's Jersey</h3>
+                                <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
+                            </td>
+                            <td>
+                                <span class="table__price">$110</span>
+                            </td>
+                            <td>
+                                <input type="number" value="3" class="quantity">
+                            </td>
+                            <td>
+                                <span class="table__subtotal">$220</span>
+                            </td>
+                            <td>
+                                <i class="fi fi-rs-trash table__trash"></i>
+                            </td>
+                        </tr>--->
+                    </tbody>
                 </table>
             </div>
             <div class="cart__actions">
@@ -193,7 +198,7 @@
                     <table class="cart__total-table">
                         <tr>
                             <td><span class="cart__total-title">Cart Subtotal</span></td>
-                            <td><span class="cart__total-price">$240.00</span></td>
+                            <td><span class="cart__total-price" id="cart-subtotal">$240.00</span></td>
                         </tr>
                         <tr>
                             <td><span class="cart__total-title">Shipping</span></td>
@@ -201,7 +206,7 @@
                         </tr>
                         <tr>
                             <td><span class="cart__total-title">Total</span></td>
-                            <td><span class="cart__total-price">$250.00</span></td>
+                            <td><span class="cart__total-price" id="cart-total">$250.00</span></td>
                         </tr>
                     </table>
                     <a href="checkout.html" class="btn flex btn--md">
@@ -291,5 +296,60 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function calculateCartTotals() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const subtotal = cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
+            const shipping = 10.00;
+            document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-shipping').textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById('cart-total').textContent = `$${(subtotal + shipping).toFixed(2)}`;
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartBody = document.getElementById('cart-body');
+
+            if (cart.length === 0) {
+                cartBody.innerHTML = `<tr><td colspan="6">Giỏ hàng đang trống</td></tr>`;
+                return;
+            }
+
+            cart.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                        <td><img src="${product.image}" class="table__img" alt="${product.name}"/></td>
+                        <td>${product.name}</td>
+                        <td>$${product.price.toFixed(2)}</td>
+                        <td><input type="number" class="quantity" value="${product.quantity}" min="1" data-id="${product.id}" /></td>
+                        <td>$${(product.quantity * product.price).toFixed(2)}</td>
+                        <td><button onclick="removeFromCart('${product.id}')"><i class="fi fi-rs-trash table__trash"></i></button></td>
+                    `;
+                cartBody.appendChild(row);
+            });
+
+            document.querySelectorAll('.quantity').forEach(input => {
+                input.addEventListener('change', (e) => {
+                    const id = e.target.getAttribute('data-id');
+                    const newQty = parseInt(e.target.value);
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const index = cart.findIndex(p => p.id == id);
+                    if (index > -1 && newQty > 0) {
+                        cart[index].quantity = newQty;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        location.reload();
+                    }
+                });
+            });
+            calculateCartTotals();
+        });
+
+        function removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id != id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
 </body>
 </html>

@@ -32,14 +32,6 @@
                 <img src="assets/img/logo.svg" alt="" class="nav__logo-img">
             </a>
             <div class="nav__menu" id="nav-menu">
-                <div class="nav__menu-top">
-                    <a href="home.html" class="nav__menu-logo">
-                        <img src="assets/img/logo.svg" alt="">
-                    </a>
-                    <div class="nav__close" id="nav-close">
-                        <i class="fi fi-rs-cross-small"></i>
-                    </div>
-                </div>
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="home.html" class="nav__link active-link">Home</a>
@@ -56,24 +48,22 @@
                 </ul>
     
                 <div class="header__search">
-                    <input type="text" placeholder="Seacrh for items..." class="form__input">
+                    <input type="text" id="search-input" placeholder="Seacrh for items..." class="form__input">
                     <button class="search__btn">
                         <img src="assets/img/search.png" alt="">
                     </button>
+                    <div id="search-results" class="search__dropdown"></div>
                 </div>
             </div>
             <div class="header__user-actions">
                 <a href="wishlist.html" class="header__action-btn">
                     <img src="assets/img/icon-heart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
                 <a href="cart.html" class="header__action-btn">
                     <img src="assets/img/icon-cart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
-                <div class="header__action-btn nav__toggle" id="nav-toggle">
-                    <img src="assets/img//menu-burger.svg" alt="">
-                </div>
             </div>
         </nav>
     </header>
@@ -163,10 +153,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -209,10 +199,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -255,10 +245,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -301,10 +291,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -347,10 +337,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -393,10 +383,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -439,10 +429,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -485,10 +475,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -531,10 +521,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -577,10 +567,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -623,10 +613,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -669,10 +659,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -715,10 +705,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -761,10 +751,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -807,10 +797,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -853,10 +843,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -899,10 +889,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -938,17 +928,17 @@
                             <div class="product__banner">
                                 <a href="" class="product__images">
                                     <img src="assets/img/product-12-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-12-2.jpg alt="" class="product__img hover">
+                                    <img src="assets/img/product-12-2.jpg"" class="product__img hover">
                                 </a>
                 
                                 <div class="product__actions">
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -991,10 +981,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -1038,10 +1028,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -1084,10 +1074,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -1130,10 +1120,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -1176,10 +1166,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -1222,10 +1212,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>

@@ -48,20 +48,21 @@
                 </ul>
     
                 <div class="header__search">
-                    <input type="text" placeholder="Seacrh for items..." class="form__input">
+                    <input type="text" id="search-input" placeholder="Seacrh for items..." class="form__input">
                     <button class="search__btn">
                         <img src="assets/img/search.png" alt="">
                     </button>
+                    <div id="search-results" class="search__dropdown"></div>
                 </div>
             </div>
             <div class="header__user-actions">
                 <a href="wishlist.html" class="header__action-btn">
                     <img src="assets/img/icon-heart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
                 <a href="cart.html" class="header__action-btn">
                     <img src="assets/img/icon-cart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
             </div>
         </nav>
@@ -77,8 +78,31 @@
             </ul>
         </section>
         <section class="compare container section--lg">
-            <table class="compare__table">
-                <tr>
+            <table class="compare__table" id="compare-table">
+                <tbody>
+                    <tr id="row-image">
+                        <th>Image</th>
+                    </tr>
+                    <tr id="row-name">
+                        <th>Name</th>
+                    </tr>
+                    <tr id="row-price">
+                        <th>Price</th>
+                    </tr>
+                    <tr id="row-infor">
+                        <th>Infor</th>
+                    </tr>
+                    <tr id="row-status">
+                        <th>Status</th>
+                    </tr>
+                    <tr id="row-add-to-cart">
+                        <th>Buy</th>
+                    </tr>
+                    <tr id="row-remove">
+                        <th>Remove</th>
+                    </tr>      
+                </tbody>
+                <!---<tr>
                     <th>Image</th>
                     <td><img src="assets/img/product-2-1.jpg" alt="" class="compare__img"></td>
                     <td><img src="assets/img/product-4-1.jpg" alt="" class="compare__img"></td>
@@ -185,7 +209,7 @@
                     <td><i class="fi fi-rs-trash table__trash"></i></td>
                     <td><i class="fi fi-rs-trash table__trash"></i></td>
                     <td><i class="fi fi-rs-trash table__trash"></i></td>
-                </tr>
+                </tr>--->
             </table>
         </section>
         <section class="newsletter section home__newsletter">
@@ -269,5 +293,31 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const compare = JSON.parse(localStorage.getItem('compare')) || [];
+            if (compare.length === 0) {
+                document.getElementById('compare-table').innerHTML = "<tr><td colspan='99'>Không có sản phẩm nào để so sánh</td></tr>";
+                return;
+            }
+
+            compare.forEach(product => {
+                document.getElementById('row-image').innerHTML += `<td><img src="${product.image}" alt="${product.name}" class="compare__img" /></td>`;
+                document.getElementById('row-name').innerHTML += `<td class="table__title">${product.name}</td>`;
+                document.getElementById('row-price').innerHTML += `<td><span class="table__price">$${product.price.toFixed(2)}</span></td>`;
+                document.getElementById('row-infor').innerHTML += '<td><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p></td>'
+                document.getElementById('row-status').innerHTML += '<td><span class="table__stock">In stock</span></td>'
+                document.getElementById('row-add-to-cart').innerHTML += '<td><a href="" class="btn btn--sm">Add to cart</a></td>'
+                document.getElementById('row-remove').innerHTML += `<td><button onclick="removeFromCompare('${product.id}')"><i class="fi fi-rs-trash table__trash"></button></td>`;
+            });
+        });
+
+        function removeFromCompare(id) {
+            let compare = JSON.parse(localStorage.getItem('compare')) || [];
+            compare = compare.filter(item => item.id != id);
+            localStorage.setItem('compare', JSON.stringify(compare));
+            location.reload();
+        }
+    </script>
 </body>
 </html>

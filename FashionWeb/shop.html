@@ -48,20 +48,21 @@
                 </ul>
     
                 <div class="header__search">
-                    <input type="text" placeholder="Seacrh for items..." class="form__input">
+                    <input type="text" id="search-input" placeholder="Seacrh for items..." class="form__input">
                     <button class="search__btn">
                         <img src="assets/img/search.png" alt="">
                     </button>
+                    <div id="search-results" class="search__dropdown"></div>
                 </div>
             </div>
             <div class="header__user-actions">
                 <a href="wishlist.html" class="header__action-btn">
                     <img src="assets/img/icon-heart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
                 <a href="cart.html" class="header__action-btn">
                     <img src="assets/img/icon-cart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
             </div>
         </nav>
@@ -77,7 +78,7 @@
         <section class="products section--lg container">
             <p class="total__products">We found <span>688</span> items for you</p>
             <div class="products__container grid">
-                <div class="product__item">
+                <!---<div class="product__item" data-id="product-1">
                     <div class="product__banner">
                         <a href="details.html" class="product__images">
                             <img src="assets/img/product-1-1.jpg" alt="" class="product__img default">
@@ -88,10 +89,10 @@
                             <a href="#" class="action__btn" aria-label="Quick View">
                                 <i class="fi fi-rs-eye"></i>
                             </a>
-                            <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                            <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
                                 <i class="fi fi-rs-heart"></i>
                             </a>
-                            <a href="#" class="action__btn" aria-label="Compare">
+                            <a href="#" class="action__btn compare__btn" aria-label="Compare">
                                 <i class="fi fi-rs-shuffle"></i>
                             </a>
                         </div>
@@ -620,7 +621,7 @@
                             <i class="fi fi-rs-shopping-bag-add"></i>
                         </a>
                     </div>
-                </div>
+                </div>--->
             </div>
             <ul class="pagination">
                 <li><a href="" class="pagination__link active">01</a></li>
@@ -716,5 +717,87 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const keyword = params.get('query')?.toLowerCase() || '';
+
+            if (!keyword) return;
+
+            // Lấy danh sách từ localStorage (hoặc nguồn cố định)
+            const sources = ['cart', 'wishlist', 'compare'];
+            const all = sources.flatMap(key => JSON.parse(localStorage.getItem(key)) || []);
+
+            const ids = new Set();
+            const products = [];
+            for (const p of all) {
+                if (!ids.has(p.id)) {
+                    products.push(p);
+                    ids.add(p.id);
+                }
+            }
+
+            const results = products.filter(p => p.name.toLowerCase().includes(keyword));
+            const container = document.querySelector('.products__container');
+            container.innerHTML = '';
+
+            if (results.length === 0) {
+                container.innerHTML = `<p>Không tìm thấy sản phẩm phù hợp với "${keyword}"</p>`;
+                return;
+            }
+
+            results.forEach(p => {
+                const html = `
+                  <div class="product__item" data-id="${p.id}">
+                    <div class="product__banner">
+                        <a href="details.html?id=${p.id}" class="product__images">
+                            <img src="${p.image}" alt="" class="product__img default">
+                            <img src="${p.imageHover}" alt="" class="product__img hover">
+                        </a>
+
+                        <div class="product__actions">
+                            <a href="#" class="action__btn" aria-label="Quick View">
+                                <i class="fi fi-rs-eye"></i>
+                            </a>
+                            <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                <i class="fi fi-rs-heart"></i>
+                            </a>
+                            <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                <i class="fi fi-rs-shuffle"></i>
+                            </a>
+                        </div>
+
+                        <div class="product__badge light-pink">
+                            Hot
+                        </div>
+                    </div>
+                    <div class="product__content">
+                        <span class="product__category">Clothing</span>
+                        <a href="">
+                            <h3 class="product__title">
+                                ${p.name}
+                            </h3>
+                        </a>
+                        <div class="product__rating">
+                            <i class="fi fi-rs-star"></i>
+                            <i class="fi fi-rs-star"></i>
+                            <i class="fi fi-rs-star"></i>
+                            <i class="fi fi-rs-star"></i>
+                            <i class="fi fi-rs-star"></i>
+                        </div>
+                        <div class="product__price flex">
+                            <span class="new__price">$${p.price}</span>
+                            <span class="old__price">$${p.oldPrice}</span>
+                        </div>
+                        <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <i class="fi fi-rs-shopping-bag-add"></i>
+                        </a>
+                    </div>
+                </div>
+                `;
+                container.insertAdjacentHTML('beforeend', html);
+            });
+        });
+    </script>
 </body>
 </html>

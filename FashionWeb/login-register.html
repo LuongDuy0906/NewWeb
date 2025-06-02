@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Evara Shop</title>
+    <script>
+        const users = [
+                {
+                    id: 'user-1',
+                    email: 'test@example.com',
+                    password: '123456',
+                    name: 'Nguyễn Văn A'
+                },
+                {
+                    id: 'user-2',
+                    email: 'user@example.com',
+                    password: 'abc123',
+                    name: 'Trần Thị B'
+                }
+            ];
+    </script>
 </head>
 <body>
     <header class="header">
@@ -48,20 +64,21 @@
                 </ul>
     
                 <div class="header__search">
-                    <input type="text" placeholder="Seacrh for items..." class="form__input">
+                    <input type="text" id="search-input" placeholder="Seacrh for items..." class="form__input">
                     <button class="search__btn">
                         <img src="assets/img/search.png" alt="">
                     </button>
+                    <div id="search-results" class="search__dropdown"></div>
                 </div>
             </div>
             <div class="header__user-actions">
                 <a href="wishlist.html" class="header__action-btn">
                     <img src="assets/img/icon-heart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
                 <a href="cart.html" class="header__action-btn">
                     <img src="assets/img/icon-cart.svg" alt="">
-                    <span class="count">3</span>
+                    <span class="count"></span>
                 </a>
             </div>
         </nav>
@@ -78,9 +95,9 @@
             <div class="login-register__container container grid">
                 <div class="login">
                     <h3 class="section__title">Đăng nhập</h3>
-                    <form action="" class="form grid">
-                        <input type="email" placeholder="Email" class="form__input">
-                        <input type="password" placeholder="Mật khẩu" class="form__input">
+                    <form action="" class="form grid" id="login-form">
+                        <input type="email" id="login-email" placeholder="Email" class="form__input">
+                        <input type="password" id="login-password" placeholder="Mật khẩu" class="form__input">
                         <div class="form__btn">
                             <button class="btn">Đăng nhập</button>
                         </div>
