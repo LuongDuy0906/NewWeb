@@ -7,6 +7,7 @@
         href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/products.js"></script>
     <title>Evara Shop</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                 <p class="header__alert-news">
                     Super Value Deals - Save more with coupons
                 </p>
-                <a href="login-register.html" class="header__top-action">
+                <a href="login-register.html" class="header__top-action" id="login-info">
                     Log In / Sign Up
                 </a>
             </div>
@@ -720,24 +721,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const keyword = params.get('query')?.toLowerCase() || '';
+            const keyword = params.get('query')?.toLowerCase() || null;
 
-            if (!keyword) return;
+            // Dùng products từ products.js
+            const results = keyword
+                ? products.filter(p => p.name.toLowerCase().includes(keyword))
+                : products; // Nếu không có query → hiển thị toàn bộ sản phẩm
 
-            // Lấy danh sách từ localStorage (hoặc nguồn cố định)
-            const sources = ['cart', 'wishlist', 'compare'];
-            const all = sources.flatMap(key => JSON.parse(localStorage.getItem(key)) || []);
-
-            const ids = new Set();
-            const products = [];
-            for (const p of all) {
-                if (!ids.has(p.id)) {
-                    products.push(p);
-                    ids.add(p.id);
-                }
-            }
-
-            const results = products.filter(p => p.name.toLowerCase().includes(keyword));
             const container = document.querySelector('.products__container');
             container.innerHTML = '';
 
@@ -750,54 +740,51 @@
                 const html = `
                   <div class="product__item" data-id="${p.id}">
                     <div class="product__banner">
-                        <a href="details.html?id=${p.id}" class="product__images">
-                            <img src="${p.image}" alt="" class="product__img default">
-                            <img src="${p.imageHover}" alt="" class="product__img hover">
+                      <a href="details.html?id=${p.id}" class="product__images">
+                        <img src="${p.image}" alt="" class="product__img default">
+                        <img src="${p.imageHover}" alt="" class="product__img hover">
+                      </a>
+          
+                      <div class="product__actions">
+                        <a href="#" class="action__btn" aria-label="Quick View">
+                          <i class="fi fi-rs-eye"></i>
                         </a>
-
-                        <div class="product__actions">
-                            <a href="#" class="action__btn" aria-label="Quick View">
-                                <i class="fi fi-rs-eye"></i>
-                            </a>
-                            <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
-                                <i class="fi fi-rs-heart"></i>
-                            </a>
-                            <a href="#" class="action__btn compare__btn" aria-label="Compare">
-                                <i class="fi fi-rs-shuffle"></i>
-                            </a>
-                        </div>
-
-                        <div class="product__badge light-pink">
-                            Hot
-                        </div>
+                        <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="${p.id}">
+                          <i class="fi fi-rs-heart"></i>
+                        </a>
+                        <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="${p.id}">
+                          <i class="fi fi-rs-shuffle"></i>
+                        </a>
+                      </div>
+          
+                      <div class="product__badge light-pink">Hot</div>
                     </div>
+          
                     <div class="product__content">
-                        <span class="product__category">Clothing</span>
-                        <a href="">
-                            <h3 class="product__title">
-                                ${p.name}
-                            </h3>
-                        </a>
-                        <div class="product__rating">
-                            <i class="fi fi-rs-star"></i>
-                            <i class="fi fi-rs-star"></i>
-                            <i class="fi fi-rs-star"></i>
-                            <i class="fi fi-rs-star"></i>
-                            <i class="fi fi-rs-star"></i>
-                        </div>
-                        <div class="product__price flex">
-                            <span class="new__price">$${p.price}</span>
-                            <span class="old__price">$${p.oldPrice}</span>
-                        </div>
-                        <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
-                            <i class="fi fi-rs-shopping-bag-add"></i>
-                        </a>
+                      <span class="product__category">Clothing</span>
+                      <a href="">
+                        <h3 class="product__title">${p.name}</h3>
+                      </a>
+                      <div class="product__rating">
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                        <i class="fi fi-rs-star"></i>
+                      </div>
+                      <div class="product__price flex">
+                        <span class="new__price">$${p.price}</span>
+                        <span class="old__price">$${p.oldPrice}</span>
+                      </div>
+                      <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="${p.id}">
+                        <i class="fi fi-rs-shopping-bag-add"></i>
+                      </a>
                     </div>
-                </div>
+                  </div>
                 `;
                 container.insertAdjacentHTML('beforeend', html);
             });
         });
-    </script>
+    </script>      
 </body>
 </html>

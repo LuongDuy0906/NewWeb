@@ -8,22 +8,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Evara Shop</title>
-    <script>
+    <!--<script>
         const users = [
                 {
-                    id: 'user-1',
-                    email: 'test@example.com',
-                    password: '123456',
-                    name: 'Nguyễn Văn A'
+                    id: 'u1',
+                    name: 'Nguyễn Văn A',
+                    email: 'user@example.com',
+                    password: 'user123',
+                    role: 'user'
                 },
                 {
-                    id: 'user-2',
-                    email: 'user@example.com',
-                    password: 'abc123',
-                    name: 'Trần Thị B'
+                    id: 'a1',
+                    name: 'Quản trị viên',
+                    email: 'admin@example.com',
+                    password: 'admin123',
+                    role: 'admin'
                 }
             ];
-    </script>
+    </script>-->
 </head>
 <body>
     <header class="header">
@@ -37,7 +39,7 @@
                 <p class="header__alert-news">
                     Super Value Deals - Save more with coupons
                 </p>
-                <a href="login-register.html" class="header__top-action">
+                <a href="login-register.html" class="header__top-action" id="login-info">
                     Log In / Sign Up
                 </a>
             </div>
@@ -105,11 +107,11 @@
                 </div>
                 <div class="register">
                     <h3 class="section__title">Đăng ký</h3>
-                    <form action="" class="form grid">
-                        <input type="text" placeholder="Tên người dùng" class="form__input">
-                        <input type="email" placeholder="Email" class="form__input">
-                        <input type="password" placeholder="Mật khẩu" class="form__input">
-                        <input type="password" placeholder="Xác nhận mật khẩu" class="form__input">
+                    <form action="" class="form grid" id="register-form">
+                        <input type="text" placeholder="Tên người dùng" class="form__input" id="register-name">
+                        <input type="email" placeholder="Email" class="form__input" id="register-email">
+                        <input type="password" placeholder="Mật khẩu" class="form__input" id="register-password">
+                        <input type="password" placeholder="Xác nhận mật khẩu" class="form__input" id="register-confirm">
                         <div class="form__btn">
                             <button class="btn">Đăng ký</button>
                         </div>

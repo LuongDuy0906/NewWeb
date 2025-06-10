@@ -7,6 +7,7 @@
         href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/products.js"></script>
     <title>Evara Shop</title>
 </head>
 <body>
@@ -21,8 +22,8 @@
                 <p class="header__alert-news">
                     Super Value Deals - Save more with coupons
                 </p>
-                <a href="login-register.html" class="header__top-action">
-                    Log In / Sign Up
+                <a href="login-register.html" class="header__top-action" id="login-info">
+                    Log In / Sign Up              
                 </a>
             </div>
         </div>
@@ -153,10 +154,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-1">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-1">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -183,7 +184,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-1">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -199,10 +200,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-2">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-2">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -229,7 +230,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-2">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -245,10 +246,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-3">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-3">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -275,7 +276,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-3">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -291,10 +292,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-4">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-4">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -321,7 +322,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-4">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -337,10 +338,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-5">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-5">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -367,7 +368,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-5">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -383,10 +384,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-6">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-6">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -413,7 +414,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-6">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -429,10 +430,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-7">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-7">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -459,7 +460,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-7">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -475,10 +476,10 @@
                                     <a href="#" class="action__btn" aria-label="Quick View">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-8">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-8">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -501,7 +502,7 @@
                                     <span class="new__price">$238.85</span>
                                     <span class="old__price">$245.8</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-8">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>

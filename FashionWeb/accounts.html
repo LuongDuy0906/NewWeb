@@ -21,7 +21,7 @@
                 <p class="header__alert-news">
                     Super Value Deals - Save more with coupons
                 </p>
-                <a href="login-register.html" class="header__top-action">
+                <a href="login-register.html" class="header__top-action" id="login-info">
                     Log In / Sign Up
                 </a>
             </div>
@@ -93,7 +93,7 @@
                     <p class="account__tab" data-target="#change-password">
                         <i class="fi fi-rs-user"></i> Change Password
                     </p>
-                    <p class="account__tab">
+                    <p class="account__tab" id="logout-btn">
                         <i class="fi fi-rs-exit"></i> Logout
                     </p>
                 </div>
@@ -258,7 +258,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
+    <!--<script>
         document.addEventListener('DOMContentLoaded', () => {
             const user = JSON.parse(localStorage.getItem('currentUser'));
             if (!user) {
@@ -276,6 +276,37 @@
                      </p>
                 </div>
               `;
+        });
+    </script>--->
+    <script>
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if (!user) {
+            alert('Bạn chưa đăng nhập!');
+            window.location.href = 'login-register.html';
+        } else if (user.role !== 'user') {
+            alert('Chỉ người dùng mới được truy cập trang này!');
+            window.location.href = 'login-register.html';
+        } else {
+            document.getElementById('user-info').innerHTML = `
+                <h3 class="tab__header">Hello ${user.name}</h3>
+                <div class="tab__body">
+                    <p class="tab__description">
+                        From your account dashboard. you can easily check $ view your recent orders, manage your shipping and billing addresses and edit your password and account details
+                     </p>
+                </div>
+              `;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                        localStorage.removeItem('currentUser');
+                        window.location.href = 'login-register.html';
+                    }
+                });
+            }
         });
     </script>
 </body>

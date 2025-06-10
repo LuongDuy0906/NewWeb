@@ -7,6 +7,7 @@
         href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/products.js"></script>
     <title>Evara Shop</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                 <p class="header__alert-news">
                     Super Value Deals - Save more with coupons
                 </p>
-                <a href="login-register.html" class="header__top-action">
+                <a href="login-register.html" class="header__top-action" id="login-info">
                     Log In / Sign Up
                 </a>
             </div>
@@ -251,7 +252,7 @@
                         <td>${product.name}</td>
                         <td>$${product.price.toFixed(2)}</td>
                         <td><span class="table__stock">In Stock</span></td>
-                        <td><a href="#" class="btn btn--sm">Add to Cart</a></td>
+                        <td><a href="#" class="btn btn--sm" data-id="${product.id}">Add to Cart</a></td>
                         <td><button onclick="removeFromWishlist('${product.id}')"><i class="fi fi-rs-trash table__trash"></i></button></td>
                     `;
                 wishlistBody.appendChild(row);

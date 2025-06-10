@@ -7,6 +7,7 @@
         href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/products.js"></script>
     <title>Evara Shop</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                 <p class="header__alert-news">
                     Super Value Deals - Save more with coupons
                 </p>
-                <a href="login-register.html" class="header__top-action">
+                <a href="login-register.html" class="header__top-action" id="login-info">
                     Log In / Sign Up
                 </a>
             </div>
@@ -300,14 +301,14 @@
                 document.getElementById('compare-table').innerHTML = "<tr><td colspan='99'>Không có sản phẩm nào để so sánh</td></tr>";
                 return;
             }
-
             compare.forEach(product => {
+                console.log(product)
                 document.getElementById('row-image').innerHTML += `<td><img src="${product.image}" alt="${product.name}" class="compare__img" /></td>`;
                 document.getElementById('row-name').innerHTML += `<td class="table__title">${product.name}</td>`;
                 document.getElementById('row-price').innerHTML += `<td><span class="table__price">$${product.price.toFixed(2)}</span></td>`;
                 document.getElementById('row-infor').innerHTML += '<td><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p></td>'
                 document.getElementById('row-status').innerHTML += '<td><span class="table__stock">In stock</span></td>'
-                document.getElementById('row-add-to-cart').innerHTML += '<td><a href="" class="btn btn--sm">Add to cart</a></td>'
+                document.getElementById('row-add-to-cart').innerHTML += `<td><a href="#" class="btn btn--sm" data-id="${product.id}">Add to cart</a></td>`;
                 document.getElementById('row-remove').innerHTML += `<td><button onclick="removeFromCompare('${product.id}')"><i class="fi fi-rs-trash table__trash"></button></td>`;
             });
         });
