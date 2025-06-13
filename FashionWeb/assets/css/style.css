@@ -5,15 +5,15 @@
 :root {
     --header-height: 4rem;
 
-    --first-color: hsl(176, 88%, 27%);
-    --first-color-alt: hsl(129, 44%, 94%);
+    --first-color: #F4A261;
+    --first-color-alt: #f7c59c;
     --second-color: hsl(34, 94%, 87%);
     --title-color: hsl(0, 0%, 13%);
-    --text-color: hsl(154, 13%, 32%);
+    --text-color: #201f1f;
     --text-color-light: hsl(60, 1%, 56%);
-    --body-color: hsl(0, 0%, 100%);
-    --container-color: hsl(0, 0%, 93%);
-    --border-color: hsl(129, 36%, 85%);
+    --body-color: #F8F8F6;
+    --container-color: #bababe;
+    --border-color: #D7CCC8;
     --border-color-alt: hsl(113, 15%, 90%);
 
     --body-font: "Lato", sans-serif;
@@ -168,6 +168,13 @@ table{
     resize: none;
 }
 
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
 .header__top{
     background-color: var(--first-color-alt);
     border-bottom: 1px solid var(--first-color);
@@ -192,12 +199,16 @@ table{
 }
 
 .header__alert-news{
-    color: var(--text-color-light);
+    color: var(--text-color);
     font-weight: var(--weight-600);
 }
 
 .header__top-action{
     color: var(--text-color);
+}
+
+.nav{
+    background-color: var(--body-color);
 }
 
 .nav,
@@ -317,6 +328,10 @@ table{
     color: var(--first-color);
 }
 
+.main{
+    margin-top: 180px;
+}
+
 .home__container{
     grid-template-columns: 5fr 7fr;
     align-items: center;
@@ -325,6 +340,7 @@ table{
 .home__subtitle,
 .home__description{
     font-size: var(--large-font-size);
+    color: #F4A261;
 }
 
 .home__subtitle{
@@ -396,17 +412,16 @@ table{
 
 .categories{
     overflow: hidden;
+    text-align: center;
 }
 
 .category__item{
     text-align: center;
     border: 1px solid var(--border-color);
     padding: 0.625rem 0.625rem 1.25rem;
-    border-radius: 1.25rem;
 }
 
 .category__img{
-    border-radius: 0.75rem;
     margin-bottom: 1.25rem;
 }
 
@@ -424,7 +439,7 @@ table{
     content: '';
 }
 
-.swiper-button-next,
+/*.swiper-button-next,
 .swiper-button-prev{
     top: -1.875rem;
     background-color: var(--first-color-alt);
@@ -443,10 +458,11 @@ table{
 
 .swiper-button-next{
     right: 0;
-}
+}*/
 
 .tab__btns{
     display: flex;
+    justify-content: center;
     column-gap: 0.75rem;
     margin-bottom: 2rem;
 }
@@ -468,7 +484,6 @@ table{
 
 .product__item{
     border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
     transition: all 0.2s var(--transition);
 }
 
@@ -484,7 +499,6 @@ table{
 .product__images{
     display: block;
     overflow: hidden;
-    border-radius: 1.25rem;
 }
 
 .product__img{
@@ -580,12 +594,12 @@ table{
 }
 
 .tab__btn.active-tab{
-    color: var(--first-color);
-    background-color: var(--second-color);
+    color: #ffff;
+    background-color: var(--first-color);
 }
 
 .product__content{
-    padding: 0 1.25rem 1.125rem;
+    padding: 0 1.25rem 0.2rem;
     position: relative;
 }
 
