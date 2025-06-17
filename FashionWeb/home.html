@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,117 +9,102 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/products.js"></script>
-    <title>Evara Shop</title>
+    <link rel="icon" href="assets/img/ChatGPT-Image-Jun-14_-2025_-02_08_38-PM.svg">
+    <title>ITLife Shop</title>
 </head>
+
 <body>
     <header class="header">
-        <div class="header__top">
-            <div class="header__container container">
-                <div class="header__contact">
-                    <span>(+84) 379 - 080 - 740</span>
-        
-                    <span>Our Location</span>
+        <div>
+            <div class="top-session">
+                <div class="left-session">
+                    <a href="home.html"><img src="assets/img/ChatGPT-Image-Jun-14_-2025_-02_08_38-PM.svg" class="logo"
+                            alt=""></a>
                 </div>
-                <p class="header__alert-news">
-                    Super Value Deals - Save more with coupons
-                </p>
-                <a href="login-register.html" class="header__top-action" id="login-info">
-                    Log In / Sign Up
-                </a>
-            </div>
-        </div>
-        <nav class="nav">
-            <a href="home.html" class="nav__logo">
-                <img src="assets/img/logo.svg" alt="" class="nav__logo-img">
-            </a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="home.html" class="nav__link active-link">Home</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="shop.html" class="nav__link">Shop</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="accounts.html" class="nav__link">My Account</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="compare.html" class="nav__link">Compare</a>
-                    </li>
-                </ul>
-    
                 <div class="header__search">
-                    <input type="text" id="search-input" placeholder="Seacrh for items..." class="form__input">
-                    <button class="search__btn">
-                        <img src="assets/img/search.png" alt="">
-                    </button>
+                    <input id="search-input" class="search-bar form__input" type="text" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><img src="assets/img/search-svgrepo-com.svg" alt=""
+                            class="search-icon"></button>
                     <div id="search-results" class="search__dropdown"></div>
                 </div>
+                <div class="right-session">
+                    <a href="wishlist.html" class="header__action-btn">
+                        <img src="assets/img/icon-heart.svg" alt="">
+                        <span class="count"></span>
+                    </a>
+                    <a href="cart.html" class="header__action-btn">
+                        <img src="assets/img/icon-cart.svg" alt="">
+                        <span class="count"></span>
+                    </a>
+                    <a href="login-register.html" class="account__btn">
+                        <img src="assets/img/account-svgrepo-com.svg" alt="">
+                    </a>
+                </div>
             </div>
-            <div class="header__user-actions">
-                <a href="wishlist.html" class="header__action-btn">
-                    <img src="assets/img/icon-heart.svg" alt="">
-                    <span class="count"></span>
-                </a>
-                <a href="cart.html" class="header__action-btn">
-                    <img src="assets/img/icon-cart.svg" alt="">
-                    <span class="count"></span>
-                </a>
+            <div class="bottom-session">
+                <div class="category">
+                    <ul class="category-list">
+                        <li><a href="home.html" class="category-link">Trang chủ</a></li>
+                        <li><a href="shop.html" class="category-link">Sản phẩm</a></li>
+                        <li><a href="accounts.html" class="category-link">Tài khoản của tôi</a></li>
+                        <li><a href="compare.html" class="category-link">So sánh</a></li>
+                    </ul>
+                </div>
             </div>
-        </nav>
+        </div>
     </header>
     <main class="main">
         <section class="home section--lg">
             <div class="home__container container grid">
                 <div class="home__content">
-                    <span class="home__subtitle">Hot promotions</span>
-                    <h1 class="home__title">Fashion Trending <span>Great Collection</span></h1>
-                    <p class="home__description">Save more with coupon & up to 20% off</p>
-                    <a href="" class="btn">Shop Now</a>
+                    <span class="home__subtitle">Khuyến mãi sốc</span>
+                    <h1 class="home__title">Thời trang xu hướng <span>Bộ sưu tập tuyệt vời</span></h1>
+                    <p class="home__description">Tiết kiệm nhiều hơn với coupon và lên đến 20% khuyến mãi</p>
+                    <a href="" class="btn">Mua ngay</a>
                 </div>
-                <img src="assets/img/home-img.png" alt="" class="home__img">
+                <img src="assets/img/poster.png" alt="" class="home__img">
             </div>
         </section>
         <section class="categories container section">
             <h3 class="section__title">
-                <span>Popular</span> Categories
+                Danh mục <span>Phổ biến</span>
             </h3>
             <div class="categories__container swiper">
                 <div class="swiper-wrapper">
                     <a href="" class="category__item swiper-slide">
-                        <img src="assets/img/category-1.jpg" alt="" class="category__img">
-                        <h3 class="category__title">T-Shirt</h3>
+                        <img src="assets/img/category-1.png" alt="" class="category__img">
+                        <h3 class="category__title">Áo thun</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
                         <img src="assets/img/category-2.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Bags</h3>
+                        <h3 class="category__title">Túi xách</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
-                        <img src="assets/img/category-3.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Sandal</h3>
+                        <img src="assets/img/category-3.png" alt="" class="category__img">
+                        <h3 class="category__title">Dép</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
-                        <img src="assets/img/category-4.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Scarf Cap</h3>
+                        <img src="assets/img/category-4.png" alt="" class="category__img">
+                        <h3 class="category__title">Mũ len</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
-                        <img src="assets/img/category-5.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Shoes</h3>
+                        <img src="assets/img/category-5.png" alt="" class="category__img">
+                        <h3 class="category__title">Giày</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
-                        <img src="assets/img/category-6.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Pillowcase</h3>
+                        <img src="assets/img/category-6.png" alt="" class="category__img">
+                        <h3 class="category__title">Vòng cổ</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
                         <img src="assets/img/category-7.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Jumpsuit</h3>
+                        <h3 class="category__title">Quần</h3>
                     </a>
                     <a href="" class="category__item swiper-slide">
-                        <img src="assets/img/category-8.jpg" alt="" class="category__img">
-                        <h3 class="category__title">Hats</h3>
+                        <img src="assets/img/category-8.png" alt="" class="category__img">
+                        <h3 class="category__title">Mũ</h3>
                     </a>
                 </div>
-                
+
                 <div class="swiper-button-next">
                     <i class="fi fi-rs-angle-right"></i>
                 </div>
@@ -128,35 +114,39 @@
             </div>
         </section>
         <section class="products section container">
-           <div class="tab__btns">
+            <div class="tab__btns">
                 <span class="tab__btn active-tab" data-target="#featured">
-                    Featured
+                    Nổi bật
                 </span>
                 <span class="tab__btn" data-target="#popular">
-                    Popular
+                    Phổ biến
                 </span>
                 <span class="tab__btn" data-target="#new-added">
-                    New added
+                    Hàng mới
                 </span>
-           </div>
-           <div class="tab__items">
+            </div>
+            <div class="tab__items">
                 <div class="tab__item active-tab" content id="featured">
                     <div class="products__container grid">
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-1-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-1-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_21_46 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_21_56 PM.png" alt=""
+                                        class="product__img hover">
                                 </a>
 
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-1">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-1">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-1">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-1">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
@@ -166,6 +156,11 @@
                                 </div>
                             </div>
                             <div class="product__content">
+                                <a href="">
+                                    <h3 class="product__title">
+                                        Áo thun nhiều màu sắc
+                                    </h3>
+                                </a>
                                 <div class="product__rating">
                                     <i class="fi fi-rs-star"></i>
                                     <i class="fi fi-rs-star"></i>
@@ -173,48 +168,47 @@
                                     <i class="fi fi-rs-star"></i>
                                     <i class="fi fi-rs-star"></i>
                                 </div>
-                                <a href="">
-                                    <h3 class="product__title">
-                                        Coloful Pattern Shirts
-                                    </h3>
-                                </a>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-1">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-1">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-2-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-2-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_23_35 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_23_37 PM.png" alt=""
+                                        class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-2">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-2">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-2">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-2">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                        
+
                                 <div class="product__badge light-green">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -225,42 +219,45 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-2">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-2">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-3-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-3-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_33_40 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/snapedit_1749969204279.jpeg" alt="" class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-3">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-3">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-3">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-3">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                        
+
                                 <div class="product__badge light-orange">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Giày thể thao nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -271,42 +268,45 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">585.000 đ</span>
+                                    <span class="old__price">780.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-3">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-3">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-4-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-4-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/snapedit_1749969411763.jpeg" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/snapedit_1749969483184.jpeg" alt="" class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-4">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-4">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-4">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-4">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                        
+
                                 <div class="product__badge light-blue">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Quần vải hoa văn nam
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -317,42 +317,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">475.000 đ</span>
+                                    <span class="old__price">675.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-4">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-4">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-5-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-5-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-5-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-5-2.png" alt="" class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-5">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-5">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-5">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-5">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                        
+
                                 <div class="product__badge light-pink">
                                     30%
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Mũ len nhiều họa tiết
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -363,42 +365,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">550.000 đ</span>
+                                    <span class="old__price">1.500.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-5">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-5">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-6-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-6-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-6-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-6-2.png" alt="" class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-6">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-6">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-6">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-6">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                        
+
                                 <div class="product__badge light-pink">
                                     -22%
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sác
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -409,42 +413,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-6">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-6">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-7-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-7-2.jpg" alt="" class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-7">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-7">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-7">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-7">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                        
+
                                 <div class="product__badge light-green">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo lụa nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -455,38 +461,40 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">875.000 đ</span>
+                                    <span class="old__price">1.300.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-7">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-7">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-8-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-8-2.jpg" alt="" class="product__img hover">
                                 </a>
-                        
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist" data-id="product-8">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-8">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare" data-id="product-8">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-8">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo sơ mi nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -497,46 +505,48 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">1.200.000 đ</span>
+                                    <span class="old__price">2.300.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="product-8">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-8">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="tab__item" content id="popular">
                     <div class="products__container grid">
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-9-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-9-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-9-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-9-2.png" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-1">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-1">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-pink">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -547,42 +557,46 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-1">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-2-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-2-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_23_35 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_23_37 PM.png" alt=""
+                                        class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-2">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-2">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-green">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -593,42 +607,42 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-2">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-10-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-10-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-10-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-10-2.png" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-orange">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Dép nhiều họa tiết
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -639,42 +653,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">340.000 đ</span>
+                                    <span class="old__price">500.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-4-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-4-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_33_40 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/snapedit_1749969204279.jpeg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-3">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-3">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
-                                <div class="product__badge light-blue">
+
+                                <div class="product__badge light-orange">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Giày thể thao nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -685,42 +701,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">585.000 đ</span>
+                                    <span class="old__price">780.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-3">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-5-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-5-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-5-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-5-2.png" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-5">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-5">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-pink">
                                     30%
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Mũ len nhiều họa tiết
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -731,42 +749,42 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">550.000 đ</span>
+                                    <span class="old__price">1.500.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-5">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-11-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-11-2.jpg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-pink">
                                     -22%
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Quần vải hoa văn nữ
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -777,42 +795,43 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">475.000 đ</span>
+                                    <span class="old__price">675.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-7-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-7-2.jpg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-7">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-7">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-green">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo lụa nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -823,38 +842,40 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">875.000 đ</span>
+                                    <span class="old__price">1.300.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-7">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-8-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-8-2.jpg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-8">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-8">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo sơ mi nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -865,10 +886,11 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">1.200.000 đ</span>
+                                    <span class="old__price">2.300.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-8">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
@@ -879,32 +901,35 @@
                     <div class="products__container grid">
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-1-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-1-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_21_46 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_21_56 PM.png" alt=""
+                                        class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-1">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-1">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-pink">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -915,42 +940,42 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-1">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-12-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-12-2.jpg"" class="product__img hover">
+                                    <img src="assets/img/product-12-2.jpg"" class=" product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-green">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -961,42 +986,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-3-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-3-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_33_40 PM.png" alt=""
+                                        class="product__img default">
+                                    <img src="assets/img/snapedit_1749969204279.jpeg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-3">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-3">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-orange">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Giày thể thao nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -1007,43 +1034,42 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">585.000 đ</span>
+                                    <span class="old__price">780.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-3">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
-                        </a>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-13-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-13-2.jpg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-blue">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Túi vải sành điệu
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -1054,42 +1080,41 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">950.000 đ</span>
+                                    <span class="old__price">1.800.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-10-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-10-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-10-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-10-2.png" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
-                                <div class="product__badge light-pink">
-                                    30%
+
+                                <div class="product__badge light-orange">
+                                    Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Dép nhiều họa tiết
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -1100,42 +1125,43 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">340.000 đ</span>
+                                    <span class="old__price">500.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
-                                    <img src="assets/img/product-6-1.jpg" alt="" class="product__img default">
-                                    <img src="assets/img/product-6-2.jpg" alt="" class="product__img hover">
+                                <a href="details.html" class="product__images">
+                                    <img src="assets/img/product-6-1.png" alt="" class="product__img default">
+                                    <img src="assets/img/product-6-2.png" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-6">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-6">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-pink">
                                     -22%
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo thun nhiều màu sác
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -1146,42 +1172,44 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">350.000 đ</span>
+                                    <span class="old__price">560.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-6">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-7-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-7-2.jpg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-7">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-7">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
-                
+
                                 <div class="product__badge light-green">
                                     Hot
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo lụa nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -1192,38 +1220,40 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">875.000 đ</span>
+                                    <span class="old__price">1.300.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-7">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__item">
                             <div class="product__banner">
-                                <a href="" class="product__images">
+                                <a href="details.html" class="product__images">
                                     <img src="assets/img/product-8-1.jpg" alt="" class="product__img default">
                                     <img src="assets/img/product-8-2.jpg" alt="" class="product__img hover">
                                 </a>
-                
+
                                 <div class="product__actions">
-                                    <a href="#" class="action__btn" aria-label="Quick View">
+                                    <a href="#" class="action__btn" aria-label="Xem nhanh">
                                         <i class="fi fi-rs-eye"></i>
                                     </a>
-                                    <a href="#" class="action__btn wishlist__btn" aria-label="Add to Wishlist">
+                                    <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                        data-id="product-8">
                                         <i class="fi fi-rs-heart"></i>
                                     </a>
-                                    <a href="#" class="action__btn compare__btn" aria-label="Compare">
+                                    <a href="#" class="action__btn compare__btn" aria-label="So sánh"
+                                        data-id="product-8">
                                         <i class="fi fi-rs-shuffle"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="product__content">
-                                <span class="product__category">Clothing</span>
                                 <a href="">
                                     <h3 class="product__title">
-                                        Coloful Pattern Shirts
+                                        Áo sơ mi nhiều màu sắc
                                     </h3>
                                 </a>
                                 <div class="product__rating">
@@ -1234,126 +1264,129 @@
                                     <i class="fi fi-rs-star"></i>
                                 </div>
                                 <div class="product__price flex">
-                                    <span class="new__price">$238.85</span>
-                                    <span class="old__price">$245.8</span>
+                                    <span class="new__price">1.200.000 đ</span>
+                                    <span class="old__price">2.300.000 đ</span>
                                 </div>
-                                <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                                <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                    data-id="product-8">
                                     <i class="fi fi-rs-shopping-bag-add"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-           </div>   
+            </div>
         </section>
         <section class="deals section">
             <div class="deals__container container grid">
                 <div class="deals__item">
                     <div class="deals__group">
-                        <h3 class="deals__brand">Deal of the Day</h3>
-                        <span class="deals__category">Limited quantities.</span>
+                        <h3 class="deals__brand">Khuyến mãi trong ngày</h3>
+                        <span class="deals__category">Số lượng có hạn.</span>
                     </div>
-                    <h4 class="deals__title">Summer Collection New Modern Design</h4>
+                    <h4 class="deals__title">Bộ sưu tập mùa hè sảng khoái với thiết kế hiện đại</h4>
                     <div class="deals__price flex">
-                        <span class="new__price">$139.00</span>
-                        <span class="old__price">$160.99</span>
+                        <span class="new__price">490.000 đ</span>
+                        <span class="old__price">780.000 đ</span>
                     </div>
                     <div class="deals__group">
-                        <p class="deals__countdown-text">Hurry Up! Offer End In:</p>
+                        <p class="deals__countdown-text">Hãy nhanh tay! Hết trong vòng</p>
                         <div class="countdown">
                             <div class="countdown__amount">
                                 <p class="countdown__period">02</p>
-                                <span class="unit">Days</span>
+                                <span class="unit">Ngày</span>
                             </div>
                             <div class="countdown__amount">
                                 <p class="countdown__period">22</p>
-                                <span class="unit">Hours</span>
+                                <span class="unit">Giờ</span>
                             </div>
                             <div class="countdown__amount">
                                 <p class="countdown__period">57</p>
-                                <span class="unit">Mins</span>
+                                <span class="unit">Phút</span>
                             </div>
                             <div class="countdown__amount">
                                 <p class="countdown__period">24</p>
-                                <span class="unit">Sec</span>
+                                <span class="unit">Giây</span>
                             </div>
                         </div>
                     </div>
                     <div class="deals__btn">
-                        <a href="" class="btn btn--md">Shop Now</a>
+                        <a href="" class="btn btn--md">Mua ngay</a>
                     </div>
                 </div>
                 <div class="deals__item">
                     <div class="deals__group">
-                        <h3 class="deals__brand">Women Clothing</h3>
-                        <span class="deals__category">Limited quantities.</span>
+                        <h3 class="deals__brand">Thời trang phái đẹp</h3>
+                        <span class="deals__category">Số lượng có hạn</span>
                     </div>
-                    <h4 class="deals__title">Try something new on vacation</h4>
+                    <h4 class="deals__title">Hãy làm mới bản thân trong kì nghỉ này</h4>
                     <div class="deals__price flex">
-                        <span class="new__price">$178.00</span>
-                        <span class="old__price">$160.99</span>
+                        <span class="new__price">570.000 đ</span>
+                        <span class="old__price">890.000 đ</span>
                     </div>
                     <div class="deals__group">
-                        <p class="deals__countdown-text">Hurry Up! Offer End In:</p>
+                        <p class="deals__countdown-text">Hãy nhanh tay! Hết trong vòng</p>
                         <div class="countdown">
                             <div class="countdown__amount">
                                 <p class="countdown__period">02</p>
-                                <span class="unit">Days</span>
+                                <span class="unit">Ngày</span>
                             </div>
                             <div class="countdown__amount">
                                 <p class="countdown__period">22</p>
-                                <span class="unit">Hours</span>
+                                <span class="unit">Giờ</span>
                             </div>
                             <div class="countdown__amount">
                                 <p class="countdown__period">57</p>
-                                <span class="unit">Mins</span>
+                                <span class="unit">Phút</span>
                             </div>
                             <div class="countdown__amount">
                                 <p class="countdown__period">24</p>
-                                <span class="unit">Sec</span>
+                                <span class="unit">Giây</span>
                             </div>
                         </div>
                     </div>
                     <div class="deals__btn">
-                        <a href="" class="btn btn--md">Shop Now</a>
+                        <a href="" class="btn btn--md">Mua ngay</a>
                     </div>
                 </div>
             </div>
         </section>
         <section class="new__arrivals container section">
-            <h3 class="section__title">
-                <span>New</span> Arrivals
+            <h3 class="section__title arrival-title">
+                <span>Hàng mới</span> siêu hot
             </h3>
             <div class="new__container swiper">
                 <div class="swiper-wrapper">
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
-                                <img src="assets/img/product-1-1.jpg" alt="" class="product__img default">
-                                <img src="assets/img/product-1-2.jpg" alt="" class="product__img hover">
+                            <a href="details.html" class="product__images">
+                                <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_21_46 PM.png" alt=""
+                                    class="product__img default">
+                                <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_21_56 PM.png" alt=""
+                                    class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-1">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-1">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-pink">
                                 Hot
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Áo thun nhiều màu sắc
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1364,42 +1397,45 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">350.000 đ</span>
+                                <span class="old__price">560.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-1">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
-                                <img src="assets/img/product-2-1.jpg" alt="" class="product__img default">
-                                <img src="assets/img/product-2-2.jpg" alt="" class="product__img hover">
+                            <a href="details.html" class="product__images">
+                                <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_23_35 PM.png" alt=""
+                                    class="product__img default">
+                                <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_23_37 PM.png" alt=""
+                                    class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-2">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-2">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-green">
                                 Hot
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Áo thun nhiều màu sắc
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1410,42 +1446,44 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">350.000 đ</span>
+                                <span class="old__price">560.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-2">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
-                                <img src="assets/img/product-3-1.jpg" alt="" class="product__img default">
-                                <img src="assets/img/product-3-2.jpg" alt="" class="product__img hover">
+                            <a href="details.html" class="product__images">
+                                <img src="assets/img/ChatGPT Image Jun 15, 2025, 01_33_40 PM.png" alt=""
+                                    class="product__img default">
+                                <img src="assets/img/snapedit_1749969204279.jpeg" alt="" class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-3">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-3">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-orange">
                                 Hot
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Giày thể thao nhiều màu sắc
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1456,42 +1494,43 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">585.000 đ</span>
+                                <span class="old__price">780.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-3">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
-                                <img src="assets/img/product-4-1.jpg" alt="" class="product__img default">
-                                <img src="assets/img/product-4-2.jpg" alt="" class="product__img hover">
+                            <a href="details.html" class="product__images">
+                                <img src="assets/img/snapedit_1749969411763.jpeg" alt="" class="product__img default">
+                                <img src="assets/img/snapedit_1749969483184.jpeg" alt="" class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-4">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-4">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-blue">
                                 Hot
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Quần vải hoa văn nam
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1502,42 +1541,43 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">475.000 đ</span>
+                                <span class="old__price">675.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-4">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
-                                <img src="assets/img/product-5-1.jpg" alt="" class="product__img default">
-                                <img src="assets/img/product-5-2.jpg" alt="" class="product__img hover">
+                            <a href="details.html" class="product__images">
+                                <img src="assets/img/product-5-1.png" alt="" class="product__img default">
+                                <img src="assets/img/product-5-2.png" alt="" class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-5">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-5">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-pink">
                                 30%
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Mũ len nhiều họa tiết
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1548,42 +1588,43 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">550.000 đ</span>
+                                <span class="old__price">1.500.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-5">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
-                                <img src="assets/img/product-6-1.jpg" alt="" class="product__img default">
-                                <img src="assets/img/product-6-2.jpg" alt="" class="product__img hover">
+                            <a href="details.html" class="product__images">
+                                <img src="assets/img/product-6-1.png" alt="" class="product__img default">
+                                <img src="assets/img/product-6-2.png" alt="" class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-6">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-6">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-pink">
                                 -22%
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Áo thun nhiều màu sác
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1594,42 +1635,43 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">350.000 đ</span>
+                                <span class="old__price">560.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào yêu thích"
+                                data-id="product-6">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
+                            <a href="details.html" class="product__images">
                                 <img src="assets/img/product-7-1.jpg" alt="" class="product__img default">
                                 <img src="assets/img/product-7-2.jpg" alt="" class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-7">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-7">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
-                    
+
                             <div class="product__badge light-green">
                                 Hot
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Áo lụa nhiều màu sắc
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1640,38 +1682,39 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">875.000 đ</span>
+                                <span class="old__price">1.300.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-7">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product__item swiper-slide">
                         <div class="product__banner">
-                            <a href="" class="product__images">
+                            <a href="details.html" class="product__images">
                                 <img src="assets/img/product-8-1.jpg" alt="" class="product__img default">
                                 <img src="assets/img/product-8-2.jpg" alt="" class="product__img hover">
                             </a>
-                    
+
                             <div class="product__actions">
-                                <a href="#" class="action__btn" aria-label="Quick View">
+                                <a href="#" class="action__btn" aria-label="Xem nhanh">
                                     <i class="fi fi-rs-eye"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Add to Wishlist">
+                                <a href="#" class="action__btn wishlist__btn" aria-label="Thêm vào yêu thích"
+                                    data-id="product-8">
                                     <i class="fi fi-rs-heart"></i>
                                 </a>
-                                <a href="#" class="action__btn" aria-label="Compare">
+                                <a href="#" class="action__btn compare__btn" aria-label="So sánh" data-id="product-8">
                                     <i class="fi fi-rs-shuffle"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product__content">
-                            <span class="product__category">Clothing</span>
                             <a href="">
                                 <h3 class="product__title">
-                                    Coloful Pattern Shirts
+                                    Áo sơ mi nhiều màu sắc
                                 </h3>
                             </a>
                             <div class="product__rating">
@@ -1682,16 +1725,17 @@
                                 <i class="fi fi-rs-star"></i>
                             </div>
                             <div class="product__price flex">
-                                <span class="new__price">$238.85</span>
-                                <span class="old__price">$245.8</span>
+                                <span class="new__price">1.200.000 đ</span>
+                                <span class="old__price">2.300.000 đ</span>
                             </div>
-                            <a href="#" class="action__btn cart__btn" aria-label="Add To Cart">
+                            <a href="#" class="action__btn cart__btn" aria-label="Thêm vào giỏ hàng"
+                                data-id="product-8">
                                 <i class="fi fi-rs-shopping-bag-add"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="swiper-button-next">
                     <i class="fi fi-rs-angle-right"></i>
                 </div>
@@ -1703,32 +1747,32 @@
         <section class="showcase section">
             <div class="showcase__container container grid">
                 <div class="showcase__wrapper">
-                    <h3 class="section__title">Hot Releases</h3>
+                    <h3 class="section__title">Hàng mới nóng hổi</h3>
                     <div class="showcase__item">
                         <a href="" class="showcase__img-box">
                             <img src="assets/img/showcase-img-1.jpg" alt="" class="showcase__img">
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Floral Print Casual Cotton DRess</h4>
+                                <h4 class="showcase__title">Túi cotton thường ngày in hoa</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">450.000 đ</span>
+                                <spna class="old__price">650.000 đ</spna>
                             </div>
                         </div>
                     </div>
                     <div class="showcase__item">
                         <a href="" class="showcase__img-box">
-                            <img src="assets/img/showcase-img-2.jpg" alt="" class="showcase__img">
+                            <img src="assets/img/category-6.png" alt="" class="showcase__img">
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Ruffled Solid Long Sleeve Blouse</h4>
+                                <h4 class="showcase__title">Vòng cổ họa tiết mềm mịn</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">350.000 đ</span>
+                                <spna class="old__price">550.000 đ</spna>
                             </div>
                         </div>
                     </div>
@@ -1738,28 +1782,28 @@
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Multi-color Print V-neck T-shirt</h4>
+                                <h4 class="showcase__title">Balo da màu vàng năng động</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">250.000 đ</span>
+                                <spna class="old__price">450.000 đ</spna>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="showcase__wrapper">
-                    <h3 class="section__title">Deals & Outletr</h3>
+                    <h3 class="section__title">Ưu đãi và Outlet</h3>
                     <div class="showcase__item">
                         <a href="" class="showcase__img-box">
                             <img src="assets/img/showcase-img-4.jpg" alt="" class="showcase__img">
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Fish Print Patched T-shirt</h4>
+                                <h4 class="showcase__title">Mũ len họa tiết bắt mắt</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">550.000 đ</span>
+                                <spna class="old__price">1.500.000 đ</spna>
                             </div>
                         </div>
                     </div>
@@ -1769,11 +1813,11 @@
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Vintage Floral Print Dress</h4>
+                                <h4 class="showcase__title">Áo in hoa cổ điển</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">350.000 đ</span>
+                                <spna class="old__price">560.000 đ</spna>
                             </div>
                         </div>
                     </div>
@@ -1783,28 +1827,28 @@
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Multi-color Stripe Circle T-shirt</h4>
+                                <h4 class="showcase__title">Áo thun sọc tròn nhiều màu</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">350.000 đ</span>
+                                <spna class="old__price">560.000 đ</spna>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="showcase__wrapper">
-                    <h3 class="section__title">Top Selling</h3>
+                    <h3 class="section__title">Bán chạy</h3>
                     <div class="showcase__item">
                         <a href="" class="showcase__img-box">
                             <img src="assets/img/showcase-img-7.jpg" alt="" class="showcase__img">
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Geometric Printed Long Sleeve Blouse</h4>
+                                <h4 class="showcase__title">Giày thể thao năng động</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">585.000 đ</span>
+                                <spna class="old__price">760.000 đ</spna>
                             </div>
                         </div>
                     </div>
@@ -1814,11 +1858,11 @@
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Print Patchwork Maxi Dress</h4>
+                                <h4 class="showcase__title">Túi Maxi In Chắp Vá</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">550.000 đ</span>
+                                <spna class="old__price">1.500.000 đ</spna>
                             </div>
                         </div>
                     </div>
@@ -1828,42 +1872,42 @@
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Daisy Floral Print Straps Jumpsuit</h4>
+                                <h4 class="showcase__title">Bộ đồ liền thân in hoa cúc họa tiết dây</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">670.000 đ</span>
+                                <spna class="old__price">860.000 đ</spna>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="showcase__wrapper">
-                    <h3 class="section__title">Trendy</h3>
+                    <h3 class="section__title">Xu hướng</h3>
                     <div class="showcase__item">
                         <a href="" class="showcase__img-box">
                             <img src="assets/img/showcase-img-1.jpg" alt="" class="showcase__img">
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Floral Print Casual Cotton DRess</h4>
+                                <h4 class="showcase__title">Túi cotton thường ngày in hoa</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">450.000 đ</span>
+                                <spna class="old__price">650.000 đ</spna>
                             </div>
                         </div>
                     </div>
                     <div class="showcase__item">
                         <a href="" class="showcase__img-box">
-                            <img src="assets/img/showcase-img-2.jpg" alt="" class="showcase__img">
+                            <img src="assets/img/category-6.png" alt="" class="showcase__img">
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Ruffled Solid Long Sleeve Blouse</h4>
+                                <h4 class="showcase__title">vòng cổ họa tiết mềm mịn</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">350.000 đ</span>
+                                <spna class="old__price">550.000 đ</spna>
                             </div>
                         </div>
                     </div>
@@ -1873,97 +1917,122 @@
                         </a>
                         <div class="showcase__content">
                             <a href="">
-                                <h4 class="showcase__title">Multi-color Print V-neck T-shirt</h4>
+                                <h4 class="showcase__title">Balo da màu vàng năng động</h4>
                             </a>
                             <div class="showcase__price flex">
-                                <span class="new__price">$238.85</span>
-                                <spna class="old__price">$245.8</spna>
+                                <span class="new__price">250.000 đ</span>
+                                <spna class="old__price">450.000 đ</spna>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="newsletter section home__newsletter">
-            <div class="newsletter__container container grid">
-                <h3 class="newsletter__title flex">
-                    <img src="assets/img/icon-email.svg" alt="" class="newsletter__icon">
-                    Sign up to newsletter
-                </h3>
-                <p class="newsletter__description">
-                    ..and receive $25 coupon for first shopping.
-                </p>
-                <form action="" class="newsletter__form">
-                    <input type="text" placeholder="Enter your email" class="newsletter__input">
-                    <button type="submit" class="newsletter__btn">Subscribe</button>
-                </form>
+        <section class="promise__section container">
+            <div class="promise-feild">
+                <div class="promise">
+                    <div class="promise-icon">
+                        <img class="like-icons" src="assets/img/like-svgrepo-com.svg" alt="">
+                    </div>
+                    <p>HÀNG HÓA CHẤT LƯỢNG</p>
+                    <P>Tận hưởng các mặt hàng chất lượng hàng đầu với giá cả hợp lý</P>
+                </div>
+                <div class="promise">
+                    <div class="promise-icon">
+                        <img class="like-icons" src="assets/img/support-svgrepo-com.svg" alt="">
+                    </div>
+                    <P>HỖ TRỢ 24/7</P>
+                    <P>Nhận hỗ trợ ngay lập tức bất cứ khi nào bạn cần</P>
+                </div>
+                <div class="promise">
+                    <div class="promise-icon">
+                        <img src="assets/img/truck-svgrepo-com.svg" alt="" class="like-icons">
+                    </div>
+                    <p>VẬN CHUYỂN NHANH CHÓNG</p>
+                    <p>Tùy chọn giao hàng nhanh chóng và đáng tin cậy</p>
+                </div>
+                <div class="promise">
+                    <div class="promise-icon">
+                        <img src="assets/img/coin-svgrepo-com.svg" alt="" class="coin-icons">
+                    </div>
+                    <p>THANH TOÁN AN TOÀN</p>
+                    <p>Nhiều phương thức thanh toán an toàn</p>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="footer container">
-        <div class="footer__container grid">
-            <div class="footer__content">
-                <a href="" class="footer__logo">
-                    <img src="assets/img/logo.svg" alt="" class="footer__logo-img">
-                </a>
-                <h4 class="footer__subtitle">Contact</h4>
-                <p class="footer__description"><span>Address</span> 175 P. Tây Sơn, Trung Liệt, Đống Đa, Hà Nội</p>
-                <p class="footer__description"><span>Phone:</span> (+84) 379 080 740</p>
-                <p class="footer__description"><span>Working time:</span> 8:00 - 10:00, Thứ 2 - Thứ 7</p>
-                <div class="footer__social">
-                    <h4 class="footer__subtitle">Follow Me</h4>
-                    <div class="footer__social-links flex">
-                        <a href="">
-                            <img src="assets/img/icon-facebook.svg" alt="" class="footer__social-icon"> 
-                        </a>
-                        <a href="">
-                            <img src="assets/img/icon-instagram.svg" alt="" class="footer__social-icon">
-                        </a>
-                        <a href="">
-                            <img src="assets/img/icon-twitter.svg" alt="" class="footer__social-icon">
-                        </a>
-                        <a href="">
-                            <img src="assets/img/icon-pinterest.svg" alt="" class="footer__social-icon">
-                        </a>
-                        <a href="">
-                            <img src="assets/img/icon-youtube.svg" alt="" class="footer__social-icon">
-                        </a>
+    <footer class="footer">
+        <div class="infor__section">
+            <div class="shop-infor-field">
+                <div class="shop-infor">
+                    <div class="infor-column">
+                        <p>VỀ NICE WEAR</p>
+                        <a href="">Chúng tôi là ai</a>
+                        <a href="">Cam kết của chúng tôi</a>
+                        <a href="">Tin tuyển dụng</a>
+                        <a href="">Hệ thống của hàng</a>
+                    </div>
+                    <div class="infor-column">
+                        <p>HỖ TRỢ KHÁCH HÀNG</p>
+                        <a href="">Hướng dẫn đặt hàng</a>
+                        <a href="">Phương thức thanh toán</a>
+                        <a href="">Chính sách thành viên</a>
+                        <a href="">Chính sách tích - tiêu điểm</a>
+                    </div>
+                    <div class="infor-column">
+                        <p>CHÍNH SÁCH</p>
+                        <a href="">Chính sách vận chuyển</a>
+                        <a href="">Chính sách kiểm hàng</a>
+                        <a href="">Chính sách đổi trả</a>
+                        <a href="">Điều kiện và điều khoản</a>
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                    <div class="infor-column">
+                        <p>LIÊN HỆ</p>
+                        <a>Tư vấn mua online: 037 908 0740</a>
+                        <a>Khiếu nại bảo hàng: 094 297 6021</a>
+                        <a>Email: luongducduy0906@gmail.com</a>
+                        <a>Giờ làm việc: 8:30 - 22:00 hàng ngày</a>
+                    </div>
+                </div>
+                <div class="shop-social-media">
+                    <p>KẾT NỐI VỚI NICE WEAR</p>
+                    <div class="social-link">
+                        <button><img src="assets/img/facebook-color-svgrepo-com.svg" alt=""></button>
+                        <button><img src="assets/img/instagram-1-svgrepo-com.svg" alt=""></button>
+                        <button><img src="assets/img/tiktok-svgrepo-com.svg" alt=""></button>
+                        <button><img src="assets/img/youtube-color-svgrepo-com.svg" alt=""></button>
                     </div>
                 </div>
             </div>
-            <div class="footer__content">
-                <h3 class="footer__title">More infor</h3>
-                <ul class="footer__links">
-                    <li><a href="" class="footer__link">About us</a></li>
-                    <li><a href="" class="footer__link">Delivery</a></li>
-                    <li><a href="" class="footer__link">Privacy and Policy</a></li>
-                    <li><a href="" class="footer__link">Terms and Conditions</a></li>
-                    <li><a href="" class="footer__link">Contact us</a></li>
-                    <li><a href="" class="footer__link">Support center</a></li>
-                </ul>
-            </div>
-            <div class="footer__content">
-            <h3 class="footer__title">Account</h3>
-            <ul class="footer__links">
-                <li><a href="" class="footer__link">Login</a></li>
-                <li><a href="" class="footer__link">Cart</a></li>
-                <li><a href="" class="footer__link">Wishlist</a></li>
-                <li><a href="" class="footer__link">Orders</a></li>
-                <li><a href="" class="footer__link">Support</a></li>
-                <li><a href="" class="footer__link">Order</a></li>
-            </ul>
-            </div>
-            <div class="footer__content">
-                <h3 class="footer__title">Paymetn Gateway</h3>
-                <img src="assets/img/payment-method.png" alt="" class="payment__img">
+            <div class="direct-to-shop-field">
+                <p>ĐĂNG KÝ NHẬN THÔNG TIN TỪ NEW WEAR</p>
+                <div class="email-input">
+                    <input class="email" type="text" placeholder="Nhập đại chỉ email">
+                    <button class="email-btn">Đăng ký</button>
+                </div>
+                <div class="payment">
+                    Chúng tôi có thể thanh toán qua nhiều phương thức
+                </div>
+                <div class="payment-grid">
+                    <div class="payment-type"><img src="assets/img/images.png" alt=""></div>
+                    <div class="payment-type"><img src="assets/img/unnamed.png" alt=""></div>
+                    <div class="payment-type"><img src="assets/img/3796142.png" alt=""></div>
+                    <div class="payment-type"><img
+                            src="assets/img/pngtree-bank-transfer-icon-isolated-commercial-company-vector-png-image_19627424.png"
+                            alt="">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="footer__bottom">
-            <p class="copyright">&copy; 2023 Evara. All rights reserved</p>
-            <span class="designer">Designed by team 6</span>
+        <div class="no__copy">
+            <img src="assets/img/ChatGPT Image Jun 14, 2025, 02_08_38 PM change-Photoroom.png" class="logo-footer"
+                alt="">
+            <p>Copyright &copy; 2014-2025 ITLife.vn All Rights Reserved.</p>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
