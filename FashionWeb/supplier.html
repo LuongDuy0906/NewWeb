@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+     <style>
+
+    /* Nền mờ */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    .edit-popup-overlay{
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+.popup-form input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 16px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+.edit-popup-form input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 16px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+.edit-popup-form{
+        font-family: "Times New Roman", Times, serif;
+      background: #ffffff;
+      width: 800px;
+      margin: 100px auto;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+      position: relative; /* rất quan trọng để nút nằm đúng */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+    /* Hộp form */
+    .popup-form {
+      font-family: "Times New Roman", Times, serif;
+      background: #ffffff;
+      width: 800px;
+      margin: 100px auto;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+      position: relative; /* rất quan trọng để nút nằm đúng */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-form h2 {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .edit-popup-form h2 {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .popup-form input[type="text"],
+    .popup-form input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+
+    .popup-form button {
+      padding: 8px 16px;
+      margin-top: 10px;
+    }
+  </style>
+    <title>Nhà cung cấp</title>
+  <header class="header">
+        <div>
+            <div class="top-session">
+                <div class="left-session">
+                    <a href="home.html"><img src="assets/img/ChatGPT-Image-Jun-14_-2025_-02_08_38-PM.svg" class="logo"
+                            alt=""></a>
+                </div>
+                <div class="header__search">
+                    <input id="search-input" class="search-bar form__input" type="text" placeholder="Tìm kiếm...">
+                    <button class="search-btn"><img src="assets/img/search-svgrepo-com.svg" alt=""
+                            class="search-icon"></button>
+                    <div id="search-results" class="search__dropdown"></div>
+                </div>
+                <div class="right-session">
+                    <a href="login-register.html" class="account__btn">
+                        <img src="assets/img/account-svgrepo-com.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="bottom-session">
+                <div class="category">
+                    <ul class="category-list">
+                        <li><a href="admin-home.html" class="category-link">Trang chủ</a></li>
+                        <li><a href="product.html" class="category-link">Sản phẩm</a></li>
+                        <li><a href="supplier.html" class="category-link">Nhà cung cấp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main
+      style="
+        height: 130vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 150px;
+        "
+      >
+        <h1>Quản lý nhà cung cấp</h1>
+      </div>
+      <div class="w-100 d-flex justify-content-end px-3 mb-3">
+        <button style="margin-right: 20px; background-color: #F4A261;" type="button" class="btn" onclick="openPopup()">
+          <i class="bi bi-plus-circle"></i>Thêm nhà cung cấp
+        </button>
+      </div>
+       <div class="popup-overlay" id="popup">
+        <div class="popup-form">
+          <button class="btn position-absolute top-0 end-0 m-2" onclick="closePopup()">X</button>
+            <h2>Thêm nhà cung cấp</h2>
+          <form onsubmit="addSubmit(event)">
+            <label for="add_name">Tên nhà cung cấp:</label>
+            <input type="text" id="add_name" name="add_name" placeholder="Tên nhà cung cấp" required>
+
+            <label for="add_address">Địa chỉ:</label>
+            <input type="text" id="add_address" name="add_address" placeholder="Địa chỉ" required>
+
+            <label for="add_phone">Số điện thoại:</label>
+            <input type="tel" id="add_phone" name="add_phone" placeholder="Số điện thoại"required>
+
+            <label for="add_email">Email:</label>
+            <input type="email" id="add_email" name="add_email" placeholder="Email" required>
+  
+            <div class="text-center">
+              <button class="btn btn-primary" type="submit">Thêm</button>
+              <button class="btn btn-danger" type="button" onclick="closePopup()">Hủy</button>
+            </div>
+            </form>
+        </div>
+  </div>
+      <div style="margin-left: 20px; margin-right: 20px">
+        <table class="table table-bordered" id="productTable">
+          <thead>
+            <tr class="table-success">
+              <th style="width: 100px; background-color: #EEC8BA;">ID</th>
+              <th style="background-color: #EEC8BA;">Tên nhà cung cấp</th>
+              <th style="width: 500px; background-color: #EEC8BA;">Địa chỉ</th>
+              <th style="background-color: #EEC8BA;">Số điện thoại</th>
+              <th style="width: 300px; background-color: #EEC8BA;">Email</th>
+              <th style="width: 120px; background-color: #EEC8BA;">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div id="pagination" style="text-align: center; margin-top: 20px"></div>
+      </div>
+    </main>
+    <footer class="footer">
+        <div class="infor__section">
+            <div class="shop-infor-field">
+                <div class="shop-infor">
+                    <div class="infor-column">
+                        <p>VỀ NICE WEAR</p>
+                        <a href="">Chúng tôi là ai</a>
+                        <a href="">Cam kết của chúng tôi</a>
+                        <a href="">Tin tuyển dụng</a>
+                        <a href="">Hệ thống của hàng</a>
+                    </div>
+                    <div class="infor-column">
+                        <p>HỖ TRỢ KHÁCH HÀNG</p>
+                        <a href="">Hướng dẫn đặt hàng</a>
+                        <a href="">Phương thức thanh toán</a>
+                        <a href="">Chính sách thành viên</a>
+                        <a href="">Chính sách tích - tiêu điểm</a>
+                    </div>
+                    <div class="infor-column">
+                        <p>CHÍNH SÁCH</p>
+                        <a href="">Chính sách vận chuyển</a>
+                        <a href="">Chính sách kiểm hàng</a>
+                        <a href="">Chính sách đổi trả</a>
+                        <a href="">Điều kiện và điều khoản</a>
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                    <div class="infor-column">
+                        <p>LIÊN HỆ</p>
+                        <a>Tư vấn mua online: 037 908 0740</a>
+                        <a>Khiếu nại bảo hàng: 094 297 6021</a>
+                        <a>Email: luongducduy0906@gmail.com</a>
+                        <a>Giờ làm việc: 8:30 - 22:00 hàng ngày</a>
+                    </div>
+                </div>
+                <div class="shop-social-media">
+                    <p>KẾT NỐI VỚI NICE WEAR</p>
+                    <div class="social-link">
+                        <button><img src="assets/img/facebook-color-svgrepo-com.svg" alt=""></button>
+                        <button><img src="assets/img/instagram-1-svgrepo-com.svg" alt=""></button>
+                        <button><img src="assets/img/tiktok-svgrepo-com.svg" alt=""></button>
+                        <button><img src="assets/img/youtube-color-svgrepo-com.svg" alt=""></button>
+                    </div>
+                </div>
+            </div>
+            <div class="direct-to-shop-field">
+                <p>ĐĂNG KÝ NHẬN THÔNG TIN TỪ NEW WEAR</p>
+                <div class="email-input">
+                    <input class="email" type="text" placeholder="Nhập đại chỉ email">
+                    <button class="email-btn">Đăng ký</button>
+                </div>
+                <div class="payment">
+                    Chúng tôi có thể thanh toán qua nhiều phương thức
+                </div>
+                <div class="payment-grid">
+                    <div class="payment-type"><img src="assets/img/images.png" alt=""></div>
+                    <div class="payment-type"><img src="assets/img/unnamed.png" alt=""></div>
+                    <div class="payment-type"><img src="assets/img/3796142.png" alt=""></div>
+                    <div class="payment-type"><img
+                            src="assets/img/pngtree-bank-transfer-icon-isolated-commercial-company-vector-png-image_19627424.png"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="no__copy">
+            <img src="assets/img/ChatGPT Image Jun 14, 2025, 02_08_38 PM change-Photoroom.png" class="logo-footer"
+                alt="">
+            <p>Copyright &copy; 2014-2025 ITLife.vn All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Popup chỉnh sửa nhà cung cấp -->
+    <div class="edit-popup-overlay" id="edit_popup">
+        <div class="edit-popup-form">
+          <button class="btn position-absolute top-0 end-0 m-2" onclick="closePopupEdit()">X</button>
+            <h2>Sửa nhà cung cấp</h2>
+          <form onsubmit="editSubmit(event)">
+            <label for="edit-name">Tên nhà cung cấp:</label>
+            <input type="text" id="edit-name" name="edit-name" placeholder="Tên nhà cung cấp" required>
+
+            <label for="edit-address">Địa chỉ:</label>
+            <input type="text" id="edit-address" name="edit-address" placeholder="Địa chỉ" required>
+
+            <label for="edit-phone">Số điện thoại:</label>
+            <input type="tel" id="edit-phone" name="edit-phone" placeholder="Số điện thoại"required>
+
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" name="edit-email" placeholder="Email" required>
+            
+            <div class="text-center">
+              <button class="btn btn-primary" type="submit">Xác nhận</button>
+              <button class="btn btn-danger" type="button" onclick="closePopupEdit()">Hủy</button>
+            </div>
+            </form>
+        </div>
+</div>
+
+  </body>
+</html>
+
+<script>
+  // GIẢ LẬP DỮ LIỆU TỪ FILE products.json
+  let data = [];
+  let editProductId = null;
+  // Load JSON và khởi tạo bảng
+  fetch('assets/js/supplier.json')
+    .then(response => response.json())
+    .then(jsonData => {
+      data = jsonData;
+      renderTable(data, currentPage);
+      renderPagination(data);
+    })
+    .catch(error => {
+      console.error('Lỗi khi tải dữ liệu:', error);
+    });
+
+  const rowsPerPage = 8;
+  let currentPage = 1;
+
+  function renderTable(data, page) {
+    const tbody = document.querySelector('#productTable tbody');
+    tbody.innerHTML = '';
+
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const pageData = data.slice(start, end);
+
+    pageData.forEach(item => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.address}</td>
+        <td>${item.phone}</td>
+        <td>${item.email}</td>
+        <td style="width: 10px;" class="text-nowrap text-center">
+          <button class="btn btn-sm btn-warning" onclick="openPopupEdit(${item.id})">Sửa</button>
+          <button class="btn btn-sm btn-danger" onclick="deleteProduct(${item.id})">Xóa</button>
+        </td>
+      `;
+      tbody.appendChild(row);
+    });
+  }
+
+  function renderPagination(data) {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    const totalPages = Math.ceil(data.length / rowsPerPage);
+    const visiblePages = 3;
+
+    // Nút "Trang đầu"
+    const firstBtn = document.createElement('button');
+    firstBtn.textContent = '« Đầu';
+    firstBtn.className = 'btn btn-outline-secondary btn-sm me-1';
+    firstBtn.disabled = currentPage == 1;
+    firstBtn.onclick = () => {
+      currentPage = 1;
+      renderTable(data, currentPage);
+      renderPagination(data);
+    };
+    pagination.appendChild(firstBtn);
+
+    // Nút Prev
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = '‹ Trước';
+    prevBtn.className = 'btn btn-outline-secondary btn-sm me-1';
+    prevBtn.disabled = currentPage == 1;
+    prevBtn.onclick = () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderTable(data, currentPage);
+        renderPagination(data);
+      }
+    };
+    pagination.appendChild(prevBtn);
+
+    // Tính toán dải trang hiển thị
+    let startPage = Math.max(1, currentPage - 1);
+    let endPage = Math.min(totalPages, startPage + visiblePages - 1);
+    if (endPage - startPage + 1 < visiblePages && startPage > 1) {
+      startPage = Math.max(1, endPage - visiblePages + 1);
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      btn.className = 'btn btn-outline-primary btn-sm mx-1';
+      if (i == currentPage) btn.classList.add('active');
+      btn.onclick = () => {
+        currentPage = i;
+        renderTable(data, currentPage);
+        renderPagination(data);
+      };
+      pagination.appendChild(btn);
+    }
+
+    // Nút Next
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Sau ›';
+    nextBtn.className = 'btn btn-outline-secondary btn-sm ms-1';
+    nextBtn.disabled = currentPage == totalPages;
+    nextBtn.onclick = () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderTable(data, currentPage);
+        renderPagination(data);
+      }
+    };
+    pagination.appendChild(nextBtn);
+
+    // Nút "Trang cuối"
+    const lastBtn = document.createElement('button');
+    lastBtn.textContent = 'Cuối »';
+    lastBtn.className = 'btn btn-outline-secondary btn-sm ms-1';
+    lastBtn.disabled = currentPage == totalPages;
+    lastBtn.onclick = () => {
+      currentPage = totalPages;
+      renderTable(data, currentPage);
+      renderPagination(data);
+    };
+    pagination.appendChild(lastBtn);
+  }
+
+    function openPopupEdit(id) {
+    const supplier = data.find(item => item.id == id);
+    if (supplier) {
+      document.getElementById('edit-name').value = supplier.name;
+      document.getElementById('edit-address').value = supplier.address;
+      document.getElementById('edit-phone').value = supplier.phone;
+      document.getElementById('edit-email').value = supplier.email;
+      editProductId = id;
+      document.getElementById('edit_popup').style.display = 'block';
+    }
+  }
+
+  function closePopupEdit() {
+    const popup = document.getElementById("edit_popup");
+    popup.style.display = "none";
+    popup.classList.remove("show");
+  }
+
+  function editSubmit(event) {
+    event.preventDefault(); // Ngăn submit form gây reload trang
+
+    // Lấy dữ liệu từ form
+    const name = document.getElementById("edit-name").value;
+    const address = document.getElementById("edit-address").value;
+    const phone = document.getElementById("edit-phone").value;
+    const email = document.getElementById("edit-email").value;
+
+    // Tìm nhà cung cấp cần sửa trong danh sách
+    const productIndex = data.findIndex(p => p.id == editProductId);
+    if (productIndex == -1) {
+      alert("Không tìm thấy nhà cung cấp để cập nhật.");
+      return;
+    }
+
+    // Cập nhật dữ liệu
+    data[productIndex] = {
+      ...data[productIndex], // giữ nguyên id
+      name,
+      address,
+      phone,
+      email,
+    };
+
+    // Ẩn popup và reset form
+    document.getElementById("edit_popup").style.display = "none";
+    editProductId = null;
+
+    alert("Cập nhật nhà cung cấp thành công!");
+    // Cập nhật lại bảng
+    renderTable(data, currentPage); // currentPage là biến bạn đã dùng để theo dõi phân trang
+  }
+
+  function deleteProduct(id) {
+    // Xác nhận người dùng trước khi xóa
+    const confirmDelete = confirm("Bạn có chắc chắn muốn xóa nhà cung cấp này?");
+    if (!confirmDelete) return;
+
+    // Tìm vị trí nhà cung cấp trong mảng
+    const index = data.findIndex(p => p.id == id);
+    if (index == -1) {
+      alert("Không tìm thấy nhà cung cấp để xóa.");
+      return;
+    }
+
+    // Xóa nhà cung cấp khỏi mảng
+    data.splice(index, 1);
+
+    // Cập nhật lại bảng và phân trang
+    const totalPages = Math.ceil(data.length / rowsPerPage);
+    if (currentPage > totalPages) currentPage = totalPages; // nếu đang ở trang cuối và bị xóa hết thì lùi trang lại
+    renderTable(data, currentPage);
+    renderPagination(data);
+
+    // Thông báo xóa thành công
+    alert("Đã xóa nhà cung cấp thành công!");
+  }
+
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  function addSubmit(event) {
+    event.preventDefault(); // Ngăn reload trang khi submit form
+
+    // Lấy dữ liệu từ form
+    const name = document.getElementById("add_name").value;
+    const address = document.getElementById("add_address").value;
+    const phone = document.getElementById("add_phone").value;
+    const email = document.getElementById("add_email").value;
+    // Tạo ID mới: giả sử id lớn nhất hiện tại + 1
+    const newId = data.length > 0 ? Math.max(...data.map(p => p.id)) + 1 : 1;
+
+    // Tạo nhà cung cấp mới
+    const newProduct = {
+      id: newId,
+      name,
+      address,
+      phone,
+      email,
+    };
+
+    // Thêm vào danh sách
+    data.push(newProduct);
+
+    // Reset form
+    event.target.reset();
+
+    // Đóng popup
+    closePopup();
+
+    // Cập nhật lại bảng và phân trang
+    renderTable(data, currentPage);
+    renderPagination(data);
+
+    // Thông báo thành công
+    alert("Thêm nhà cung cấp thành công!");
+  }
+
+</script>

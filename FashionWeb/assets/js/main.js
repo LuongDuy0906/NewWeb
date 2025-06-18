@@ -271,7 +271,7 @@ const tabs = document.querySelectorAll('[data-target]'),
         alert('Đăng nhập thành công!');
   
         if (user.role === 'admin') {
-          window.location.href = 'admin.html';
+          window.location.href = 'admin-home.html';
         } else {
           window.location.href = 'accounts.html';
         }
