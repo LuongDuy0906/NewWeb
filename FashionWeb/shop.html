@@ -749,8 +749,8 @@
                         <i class="fi fi-rs-star"></i>
                       </div>
                       <div class="product__price flex">
-                        <span class="new__price">${p.price.toFixed(3)} đ</span>
-                        <span class="old__price">${p.oldPrice.toFixed(3)} đ</span>
+                        <span class="new__price">${p.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
+                        <span class="old__price">${p.oldPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
                       </div>
                       <a href="#" class="action__btn cart__btn" aria-label="Add To Cart" data-id="${p.id}">
                         <i class="fi fi-rs-shopping-bag-add"></i>

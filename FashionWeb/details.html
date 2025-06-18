@@ -66,11 +66,11 @@
         <section class="details section--lg">
             <div class="details__container container grid">
                 <div class="details__group">
-                    <img src="assets/img/product-8-1.jpg" alt="" class="details__img">
+                    <img src="" alt="" class="details__img">
                     <div class="details__small-images grid">
-                        <img src="assets/img/product-8-2.jpg" alt="" class="details__small-img">
-                        <img src="assets/img/product-8-1.jpg" alt="" class="details__small-img">
-                        <img src="assets/img/product-8-2.jpg" alt="" class="details__small-img">
+                        <img src="" alt="" class="details__small-img">
+                        <img src="" alt="" class="details__small-img">
+                        <img src="" alt="" class="details__small-img">
                     </div>
                 </div>
                 <div class="details__group">
@@ -578,6 +578,40 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get("id");
+            const product = products.find(p => p.id === productId);
+
+            if (!product) {
+                alert("Không tìm thấy sản phẩm");
+                return;
+            }
+
+            // Hiển thị ảnh chính
+            document.querySelector(".details__img").src = product.image;
+
+            // Hiển thị ảnh nhỏ
+            const smallImages = document.querySelector(".details__small-images");
+            smallImages.innerHTML = `
+                <img src="${product.image}" alt="" class="details__small-img">
+                <img src="${product.imageHover}" alt="" class="details__small-img">
+                <img src="${product.image}" alt="" class="details__small-img">
+            `;
+
+            // Tên sản phẩm
+            document.querySelector(".details__title").textContent = product.name;
+
+            // Giá
+            document.querySelector(".new__price").textContent = product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+            document.querySelector(".old__price").textContent = product.oldPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+
+            // Kích hoạt đổi ảnh khi click ảnh nhỏ
+            imgGallery();
+        });
+    </script>
 </body>
 
 </html>

@@ -36,21 +36,6 @@
     --transition: cubic-bezier(0, 0, 0.05, 1);
 }
 
-@media screen and (max-width: 1200px) {
-    :root {
-        --big-font-size: 2.25rem;
-        --h1-font-size: 2rem;
-        --h2-font-size: 1.375rem;
-        --h3-font-size: 1.25rem;
-        --h4-font-size: 1.125rem;
-        --large-font-size: 1rem;
-        --normal-font-size: 0.9375rem;
-        --small-font-size: 0.8125rem;
-        --smaller-font-size: 0.6875rem;
-        --tiny-font-size: 0.625rem;
-    }
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -111,7 +96,7 @@ table {
 .container {
     max-width: 1320px;
     margin-inline: auto;
-    padding-inline: .75rem;
+    padding-inline: .75rem
 }
 
 .grid {
@@ -175,6 +160,7 @@ table {
     top: 0;
     right: 0;
     left: 0;
+    z-index: 1000;
     box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -455,9 +441,9 @@ table {
     font-size: var(--small-font-size);
 }
 
-.swiper {
+/*.swiper {
     overflow: initial;
-}
+}*/
 
 .swiper-button-next::after,
 .swiper-button-prev::after {

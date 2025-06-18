@@ -279,10 +279,10 @@
         function calculateCartTotals() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const subtotal = cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
-            const shipping = 10.000;
-            document.getElementById('cart-subtotal').textContent = `${subtotal.toFixed(3)} đ`;
-            document.getElementById('cart-shipping').textContent = `${shipping.toFixed(3)} đ`;
-            document.getElementById('cart-total').textContent = `${(subtotal + shipping).toFixed(3)} đ`;
+            const shipping = 10000;
+            document.getElementById('cart-subtotal').textContent = `${subtotal.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}`;
+            document.getElementById('cart-shipping').textContent = `${shipping.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}`;
+            document.getElementById('cart-total').textContent = `${(subtotal + shipping).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -299,9 +299,9 @@
                 row.innerHTML = `
                         <td><img src="${product.image}" class="table__img" alt="${product.name}"/></td>
                         <td>${product.name}</td>
-                        <td>${product.price.toFixed(3)} đ</td>
+                        <td>${product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</td>
                         <td><input type="number" class="quantity" value="${product.quantity}" min="1" data-id="${product.id}" /></td>
-                        <td>${(product.quantity * product.price).toFixed(3)} đ</td>
+                        <td>${(product.quantity * product.price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</td>
                         <td><button onclick="removeFromCart('${product.id}')"><i class="fi fi-rs-trash table__trash"></i></button></td>
                     `;
                 cartBody.appendChild(row);
