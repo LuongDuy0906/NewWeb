@@ -118,6 +118,7 @@
                         <li><a href="admin-home.html" class="category-link">Trang chủ</a></li>
                         <li><a href="product.html" class="category-link">Sản phẩm</a></li>
                         <li><a href="supplier.html" class="category-link">Nhà cung cấp</a></li>
+                        <li><a href="order.html" class="category-link">Đơn hàng</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,7 +126,7 @@
     </header>
     <main
       style="
-        height: 130vh;
+        height: 110vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -137,7 +138,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 150px;
+          height: 120px;
         "
       >
         <h1>Quản lý nhà cung cấp</h1>
@@ -292,16 +293,19 @@
   let data = [];
   let editProductId = null;
   // Load JSON và khởi tạo bảng
-  fetch('assets/js/supplier.json')
-    .then(response => response.json())
-    .then(jsonData => {
-      data = jsonData;
-      renderTable(data, currentPage);
-      renderPagination(data);
-    })
-    .catch(error => {
-      console.error('Lỗi khi tải dữ liệu:', error);
-    });
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch('http://localhost:8080/api/suppliers')
+      .then(response => response.json())
+      .then(jsonData => {
+        data = jsonData;
+        renderTable(data, currentPage);
+        renderPagination(data);
+      })
+      .catch(error => {
+        console.error('Lỗi khi tải sản phẩm từ API:', error);
+        alert('Không thể tải danh sách sản phẩm!');
+      });
+  });
 
   const rowsPerPage = 8;
   let currentPage = 1;
@@ -412,15 +416,23 @@
   }
 
     function openPopupEdit(id) {
-    const supplier = data.find(item => item.id == id);
-    if (supplier) {
+    fetch(`http://localhost:8080/api/suppliers/${id}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Không tìm thấy sản phẩm");
+      return res.json();
+    })
+    .then(supplier =>{
       document.getElementById('edit-name').value = supplier.name;
       document.getElementById('edit-address').value = supplier.address;
       document.getElementById('edit-phone').value = supplier.phone;
       document.getElementById('edit-email').value = supplier.email;
       editProductId = id;
       document.getElementById('edit_popup').style.display = 'block';
-    }
+    })
+    .catch(err => {
+      console.error("Lỗi khi tải sản phẩm:", err);
+      alert("Không thể tải sản phẩm để sửa");
+    });
   }
 
   function closePopupEdit() {
@@ -515,22 +527,33 @@
       phone,
       email,
     };
+    fetch("http://localhost:8080/api/suppliers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newProduct)
+    })
+      .then(res => {
+        if (!res.ok) throw new Error("Lỗi khi thêm nhà cung cấp");
+        return res.json();
+      })
+      .then(added => {
+        alert("Thêm nhà cung cấp thành công!");
 
-    // Thêm vào danh sách
-    data.push(newProduct);
+        // Thêm vào danh sách nội bộ + vẽ lại bảng
+        data.push(added);
+        renderTable(data, currentPage);
+        renderPagination(data);
 
-    // Reset form
-    event.target.reset();
-
-    // Đóng popup
-    closePopup();
-
-    // Cập nhật lại bảng và phân trang
-    renderTable(data, currentPage);
-    renderPagination(data);
-
-    // Thông báo thành công
-    alert("Thêm nhà cung cấp thành công!");
+        // Reset form + đóng popup
+        event.target.reset();
+        closePopup();
+      })
+      .catch(error => {
+        console.error("Lỗi:", error);
+        alert("Không thể thêm nhà cung cấp!");
+      });
   }
 
 </script>

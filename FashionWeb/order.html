@@ -116,8 +116,9 @@
                 <div class="category">
                     <ul class="category-list">
                         <li><a href="admin-home.html" class="category-link">Trang chủ</a></li>
-                        <li><a href="product.html" class="category-link active">Sản phẩm</a></li>
+                        <li><a href="product.html" class="category-link">Sản phẩm</a></li>
                         <li><a href="supplier.html" class="category-link">Nhà cung cấp</a></li>
+                        <li><a href="order.html" class="category-link active">Đơn hàng</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,7 +126,7 @@
     </header>
     <main
       style="
-        height: 130vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -153,30 +154,11 @@
           <button class="btn position-absolute top-0 end-0 m-2" onclick="closePopup()">X</button>
             <h2>Thêm sản phẩm</h2>
           <form onsubmit="addSubmit(event)">
-            <label for="add_name">Tên sản phẩm:</label>
-            <input type="text" id="add_name" name="add_name" placeholder="Tên sản phẩm" required>
-
-            <label for="add_price">Giá:</label>
-            <input type="text" id="add_price" name="add_price" placeholder="Giá" required>
-
-            <label for="add_old_price">Giá cũ:</label>
-            <input type="number" id="add_old_price" name="add_old_price" placeholder="Giá cũ"required>
-
-            <label for="add_image">Ảnh 1</label>
-            <input type="number" id="add_image" name="add_image" placeholder="Ảnh 1" required>
-            
-            <label for="add_image_hover">Ảnh 2</label>
-            <input type="text" name="add_image_hover" id="add_image_hover" placeholder="Ảnh 2">
-
-            <label for="add_stock">Số lượng: </label>
-            <input type="text" name="add_stock" id="add_stock" placeholder="Số lượng">
-            
-            <label for="add_supplier_id">Nhà cung cấp:</label>
-            <select class="form-select" id="add_supplier_id" name="add_supplier_id" required>
-              <option value="">-- Chọn nhà cung cấp --</option>
+            <label for="add_user_id">Người dùng:</label>
+            <select class="form-select" id="add_user_id" name="add_user_id">
+              <option value="">-- Chọn người dùng --</option>
               <!-- JS sẽ thêm option vào đây -->
             </select>
-
 
             <div class="text-center">
               <button class="btn btn-primary" type="submit">Thêm</button>
@@ -190,10 +172,11 @@
           <thead>
             <tr>
               <th style="background-color: #EEC8BA;">ID</th>
-              <th style="background-color: #EEC8BA;">Tên sản phâm</th>
-              <th style="background-color: #EEC8BA;">Giá</th>
-              <th style="background-color: #EEC8BA;">Nhà cung cấp</th>
-              <th style="width: 120px; background-color: #EEC8BA;">Thao tác</th>
+              <th style="background-color: #EEC8BA;">Tên người dùng</th>
+              <th style="background-color: #EEC8BA;">Ngày đặt hàng</th>
+              <th style="background-color: #EEC8BA;">Tổng tiền</th>
+              <th style="background-color: #EEC8BA;">Trạng thái</th>
+              <th style="width: 170px; background-color: #EEC8BA;">Thao tác</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -272,32 +255,6 @@
         </div>
     </footer>
     <!-- Popup chỉnh sửa sản phẩm -->
-    <div class="edit-popup-overlay" id="edit_popup">
-        <div class="edit-popup-form">
-          <button class="btn position-absolute top-0 end-0 m-2" onclick="closePopupEdit()">X</button>
-            <h2>Sửa sản phẩm</h2>
-          <form onsubmit="editSubmit(event)">
-            <label for="edit-name">Tên sản phẩm:</label>
-            <input type="text" id="edit-name" name="edit-name" placeholder="Tên sản phẩm" required>
-
-            <label for="edit-price">Giá</label>
-            <input type="text" id="edit-price" name="edit-price" placeholder="Giá" required>
-
-            <label for="edit-old-price">Giá cũ:</label>
-            <input type="number" id="edit-old-price" name="edit-old-price" placeholder="Giá cũ">
-
-            <label for="edit-supplier-id">Nhà cung cấp:</label>
-            <select class="form-select" id="edit-supplier-id" name="edit-supplier-id" required>
-              <option value="">-- Chọn nhà cung cấp --</option>
-            </select>
-
-            <div class="text-center">
-              <button class="btn btn-primary" type="submit">Xác nhận</button>
-              <button class="btn btn-danger" type="button" onclick="closePopupEdit()">Hủy</button>
-            </div>
-            </form>
-        </div>
-</div>
 
   </body>
 </html>
@@ -311,7 +268,7 @@
   let currentPage = 1;
 
   document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:8080/api/products')
+    fetch('http://localhost:8080/api/orders')
       .then(response => response.json())
       .then(jsonData => {
         data = jsonData;
@@ -336,15 +293,16 @@
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${item.id}</td>
-        <td>${item.name}</td>
-        <td>${item.price}</td>
-        <td>${item.supplierName}</td>
+        <td>${item.userName}</td>
+        <td>${item.orderDate}</td>
+        <td>${item.totalAmount}</td>
+        <td>${item.status}</td>
         <td style="width: 10px;" class="text-nowrap text-center">
-  <button class="btn btn-sm btn-warning d-inline-flex align-items-center gap-1" onclick="openPopupEdit(${item.id})" title="Sửa">
+  <button class="btn btn-sm btn-warning d-inline-flex align-items-center gap-1" onclick="editOrder(${item.id})" title="Sửa">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
       <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
     </svg>
-    Sửa
+    Cập nhật tiến trình
   </button>
   <button class="btn btn-sm btn-danger d-inline-flex align-items-center gap-1" onclick="deleteProduct(${item.id})" title="Xóa">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -438,35 +396,17 @@
     pagination.appendChild(lastBtn);
   }
 
-  function loadSuppliers() {
-  fetch("http://localhost:8080/api/suppliers")
+function loadUserToSelect(selectId, selectedId = null) {
+  fetch("http://localhost:8080/api/users")
     .then(res => res.json())
-    .then(suppliers => {
-      const select = document.getElementById("add_supplier_id");
-      suppliers.forEach(supplier => {
-        const option = document.createElement("option");
-        option.value = supplier.id;
-        option.textContent = supplier.name;
-        select.appendChild(option);
-      });
-    })
-    .catch(err => {
-      console.error("Lỗi khi tải nhà cung cấp:", err);
-      alert("Không thể tải danh sách nhà cung cấp!");
-    });
-}
-
-function loadSuppliersToSelect(selectId, selectedId = null) {
-  fetch("http://localhost:8080/api/suppliers")
-    .then(res => res.json())
-    .then(suppliers => {
+    .then(users => {
       const select = document.getElementById(selectId);
-      select.innerHTML = '<option value="">-- Chọn nhà cung cấp --</option>';
-      suppliers.forEach(supplier => {
+      select.innerHTML = '<option value="">--Chọn người dùng--</option>';
+      users.forEach(user => {
         const option = document.createElement("option");
-        option.value = supplier.id;
-        option.textContent = supplier.name;
-        if (selectedId && supplier.id === selectedId) {
+        option.value = user.id;
+        option.textContent = user.name;
+        if (selectedId && user.id === selectedId) {
           option.selected = true;
         }
         select.appendChild(option);
@@ -479,7 +419,7 @@ function loadSuppliersToSelect(selectId, selectedId = null) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadSuppliersToSelect("add_supplier_id");
+  loadUserToSelect("add_user_id");
 });
 
 
@@ -514,68 +454,44 @@ document.addEventListener("DOMContentLoaded", () => {
     popup.classList.remove("show");
   }
 
-  function editSubmit(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("edit-name").value;
-  const price = parseFloat(document.getElementById("edit-price").value);
-  const oldPrice = parseFloat(document.getElementById("edit-old-price").value);
-  const supplierId =  parseInt(document.getElementById("edit-supllier-id").value);
-
-  if (!editProductId) {
-    alert("Không tìm thấy sản phẩm để cập nhật.");
-    return;
-  }
-
-  const updatedProduct = {
-    name,
-    price,
-    oldPrice,
-    supplierId,
-  };
-
-  fetch(`http://localhost:8080/api/products/${editProductId}`, {
+  function editOrder(id) {
+  fetch(`http://localhost:8080/api/orders/${id}/next`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(updatedProduct)
   })
     .then(res => {
-      if (!res.ok) throw new Error("Lỗi khi cập nhật sản phẩm");
+      if (!res.ok) throw new Error("Lỗi khi cập nhật đơn hàng");
       return res.json();
     })
     .then(updated => {
-      alert("Cập nhật sản phẩm thành công!");
+      alert("Cập nhật đơn hàng thành công!");
 
       // Cập nhật dữ liệu trong danh sách `data`
-      const index = data.findIndex(p => p.id === editProductId);
+      const index = data.findIndex(p => p.id === id);
       if (index !== -1) {
         data[index] = updated;
       }
 
-      // Ẩn popup
-      document.getElementById("edit_popup").style.display = "none";
-      editProductId = null;
-
       renderTable(data, currentPage);
     })
     .catch(error => {
-      console.error("Lỗi cập nhật sản phẩm:", error);
-      alert("Không thể cập nhật sản phẩm!");
+      console.error("Lỗi cập nhật đơn hàng:", error);
+      alert("Không thể cập nhật đơn hàng!");
     });
 }
 
 
   function deleteProduct(id) {
-  const confirmDelete = confirm("Bạn có chắc chắn muốn xóa sản phẩm này?");
+  const confirmDelete = confirm("Bạn có chắc chắn muốn xóa đơn hàng này?");
   if (!confirmDelete) return;
 
-  fetch(`http://localhost:8080/api/products/${id}`, {
+  fetch(`http://localhost:8080/api/orders/${id}`, {
     method: "DELETE"
   })
     .then(res => {
-      if (!res.ok) throw new Error("Không thể xóa sản phẩm");
+      if (!res.ok) throw new Error("Không thể xóa đơn hàng");
       return res.text(); // hoặc .json() nếu backend trả JSON
     })
     .then(() => {
@@ -589,11 +505,11 @@ document.addEventListener("DOMContentLoaded", () => {
       renderTable(data, currentPage);
       renderPagination(data);
 
-      alert("Đã xóa sản phẩm thành công!");
+      alert("Đã xóa đơn hàng thành công!");
     })
     .catch(error => {
-      console.error("Lỗi khi xoá sản phẩm:", error);
-      alert("Xóa sản phẩm thất bại!");
+      console.error("Lỗi khi xoá đơn hàng:", error);
+      alert("Xóa đơn hàng thất bại!");
     });
 }
 
@@ -610,25 +526,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("hello")
     event.preventDefault();
 
-    const name = document.getElementById("add_name").value;
-    const price = parseFloat(document.getElementById("add_price").value);
-    const oldPrice = parseFloat(document.getElementById("add_old_price").value);
-    const image = document.getElementById("add_image").value;
-    const imageHover = document.getElementById("add_image_hover").value;
-    const stock = parseInt(document.getElementById("add_stock").value);
-    const supplierId = parseInt(document.getElementById("add_supllier_id").value);
+    const userId = parseInt(document.getElementById("add_user_id").value);
 
     const newProduct = {
-      name,
-      price,
-      oldPrice,
-      image,
-      imageHover,
-      stock,
-      supplierId,
+      userId,
     };
 
-    fetch("http://localhost:8080/api/products", {
+    fetch("http://localhost:8080/api/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -276,6 +276,10 @@ table {
     margin-left: 50px;
 }
 
+.active{
+    color: red;
+}
+
 .category-link:hover {
     color: red;
 }
