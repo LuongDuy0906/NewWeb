@@ -31,6 +31,9 @@
                     <a href="login-register.html" class="account__btn">
                         <img src="assets/img/account-svgrepo-com.svg" alt="">
                     </a>
+                    <a href="login-register.html" id="logout-btn" class="account__btn">
+                        <img src="assets/img/entrance-svgrepo-com.svg" alt="">
+                    </a>
                 </div>
             </div>
             <div class="bottom-session">
@@ -2024,5 +2027,18 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+                const logoutBtn = document.getElementById('logout-btn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', () => {
+                        if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                            localStorage.removeItem('currentUser');
+                            window.location.href = 'login-register.html';
+                        }
+                    });
+                }
+            });
+    </script>
 </body>
 </html>
