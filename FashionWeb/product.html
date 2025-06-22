@@ -110,6 +110,9 @@
                     <a href="login-register.html" class="account__btn">
                         <img src="assets/img/account-svgrepo-com.svg" alt="">
                     </a>
+                    <a href="login-register.html" class="account__btn" id="logout-btn">
+                        <img src="assets/img/entrance-alt1-svgrepo-com.svg" alt="">
+                    </a>
                 </div>
             </div>
             <div class="bottom-session">
@@ -118,6 +121,8 @@
                         <li><a href="admin-home.html" class="category-link">Trang chủ</a></li>
                         <li><a href="product.html" class="category-link active">Sản phẩm</a></li>
                         <li><a href="supplier.html" class="category-link">Nhà cung cấp</a></li>
+                        <li><a href="order.html" class="category-link">Đơn Hàng</a></li>
+                        <li><a href="user.html" class="category-link">Người Dùng</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,7 +130,7 @@
     </header>
     <main
       style="
-        height: 130vh;
+        height: 110vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -520,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const name = document.getElementById("edit-name").value;
   const price = parseFloat(document.getElementById("edit-price").value);
   const oldPrice = parseFloat(document.getElementById("edit-old-price").value);
-  const supplierId =  parseInt(document.getElementById("edit-supllier-id").value);
+  const supplierId =  parseInt(document.getElementById("edit-supplier-id").value);
 
   if (!editProductId) {
     alert("Không tìm thấy sản phẩm để cập nhật.");
@@ -616,7 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const image = document.getElementById("add_image").value;
     const imageHover = document.getElementById("add_image_hover").value;
     const stock = parseInt(document.getElementById("add_stock").value);
-    const supplierId = parseInt(document.getElementById("add_supllier_id").value);
+    const supplierId = parseInt(document.getElementById("add_supplier_id").value);
 
     const newProduct = {
       name,

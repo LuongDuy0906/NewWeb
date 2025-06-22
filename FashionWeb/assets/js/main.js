@@ -254,7 +254,19 @@ const tabs = document.querySelectorAll('[data-target]'),
     });
   });
 
+
   document.addEventListener('DOMContentLoaded', () => {
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                        localStorage.removeItem('currentUser');
+                        window.location.href = 'login-register.html';
+                    }
+                });
+            }
+        });
+  /*document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     if (!loginForm) return;
   
@@ -292,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   const registerForm = document.getElementById('register-form');
   if (!registerForm) return;
 
@@ -330,12 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     users.push(newUser);
-    console.log(newUser)
-    console.log(users)
     localStorage.setItem('users', JSON.stringify(users));
     localStorage.setItem('currentUser', JSON.stringify(newUser));
     console.log(newUser)
     alert('Đăng ký thành công!');
     window.location.href = 'accounts.html';
   });
-});
+});*/

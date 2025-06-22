@@ -121,8 +121,8 @@
                         <li><a href="admin-home.html" class="category-link">Trang chủ</a></li>
                         <li><a href="product.html" class="category-link">Sản phẩm</a></li>
                         <li><a href="supplier.html" class="category-link">Nhà cung cấp</a></li>
-                        <li><a href="order.html" class="category-link active">Đơn hàng</a></li>
-                        <li><a href="user.html" class="category-link">Người Dùng</a></li>
+                        <li><a href="order.html" class="category-link">Đơn Hàng</a></li>
+                        <li><a href="user.html" class="category-link active">Người Dùng</a></li>
                     </ul>
                 </div>
             </div>
@@ -146,30 +146,7 @@
           margin-bottom: -10px;
         "
       >
-        <h1>Quản lý sản phẩm</h1>
-      </div>
-      <div class="w-100 d-flex justify-content-end px-3 mb-3">
-        <button style="margin-right: 20px; background-color: #F4A261;" type="button" class="btn" onclick="openPopup()">
-          <i class="bi bi-plus-circle"></i> Thêm sản phẩm
-        </button>
-      </div>
-       <div class="popup-overlay" id="popup">
-        <div class="popup-form">
-          <button class="btn position-absolute top-0 end-0 m-2" onclick="closePopup()">X</button>
-            <h2>Thêm sản phẩm</h2>
-          <form onsubmit="addSubmit(event)">
-            <label for="add_user_id">Người dùng:</label>
-            <select class="form-select" id="add_user_id" name="add_user_id">
-              <option value="">-- Chọn người dùng --</option>
-              <!-- JS sẽ thêm option vào đây -->
-            </select>
-
-            <div class="text-center">
-              <button class="btn btn-primary" type="submit">Thêm</button>
-              <button class="btn btn-danger" type="button" onclick="closePopup()">Hủy</button>
-            </div>
-            </form>
-        </div>
+        <h1>Quản lý người dùng</h1>
       </div>
       <div style="margin-left: 20px; margin-right: 20px;">
         <table class="table table-bordered" id="productTable">
@@ -177,10 +154,8 @@
             <tr>
               <th style="background-color: #EEC8BA;">ID</th>
               <th style="background-color: #EEC8BA;">Tên người dùng</th>
-              <th style="background-color: #EEC8BA;">Ngày đặt hàng</th>
-              <th style="background-color: #EEC8BA;">Tổng tiền</th>
-              <th style="background-color: #EEC8BA;">Trạng thái</th>
-              <th style="width: 170px; background-color: #EEC8BA;">Thao tác</th>
+              <th style="background-color: #EEC8BA;">Email</th>
+              <th style="width: 120px; background-color: #EEC8BA;">Thao tác</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -272,7 +247,7 @@
   let currentPage = 1;
 
   document.addEventListener("DOMContentLoaded", () => {
-    fetch('http://localhost:8080/api/orders')
+    fetch('http://localhost:8080/api/users')
       .then(response => response.json())
       .then(jsonData => {
         data = jsonData;
@@ -280,8 +255,8 @@
         renderPagination(data);
       })
       .catch(error => {
-        console.error('Lỗi khi tải sản phẩm từ API:', error);
-        alert('Không thể tải danh sách sản phẩm!');
+        console.error('Lỗi khi tải người dùng từ API:', error);
+        alert('Không thể tải danh sách người dùng!');
       });
   });
 
@@ -297,23 +272,9 @@
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>${item.id}</td>
-        <td>${item.userName}</td>
-        <td>${item.orderDate}</td>
-        <td>${item.totalAmount}</td>
-        <td>${item.status}</td>
+        <td>${item.name}</td>
+        <td>${item.email}</td>
         <td style="width: 10px;" class="text-nowrap text-center">
-  <button class="btn btn-sm btn-warning d-inline-flex align-items-center gap-1" onclick="editOrder(${item.id})" title="Sửa">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
-    </svg>
-    Cập nhật tiến trình
-  </button>
-  <button class="btn btn-sm btn-warning d-inline-flex align-items-center gap-1" onclick="addItem(${item.id})" title="Sửa">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z"/>
-    </svg>
-    Thêm sản phẩm
-  </button>
   <button class="btn btn-sm btn-danger d-inline-flex align-items-center gap-1" onclick="deleteProduct(${item.id})" title="Xóa">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
       <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
@@ -406,102 +367,15 @@
     pagination.appendChild(lastBtn);
   }
 
-function loadUserToSelect(selectId, selectedId = null) {
-  fetch("http://localhost:8080/api/users")
-    .then(res => res.json())
-    .then(users => {
-      const select = document.getElementById(selectId);
-      select.innerHTML = '<option value="">--Chọn người dùng--</option>';
-      users.forEach(user => {
-        const option = document.createElement("option");
-        option.value = user.id;
-        option.textContent = user.name;
-        if (selectedId && user.id === selectedId) {
-          option.selected = true;
-        }
-        select.appendChild(option);
-      });
-    })
-    .catch(err => {
-      console.error("Lỗi khi tải nhà cung cấp:", err);
-      alert("Không thể tải danh sách nhà cung cấp!");
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  loadUserToSelect("add_user_id");
-});
-
-
-  function openPopupEdit(id) {
-  fetch(`http://localhost:8080/api/products/${id}`)
-    .then(res => {
-      if (!res.ok) throw new Error("Không tìm thấy sản phẩm");
-      return res.json();
-    })
-    .then(product =>{
-    // Gán dữ liệu vào form popup
-      document.getElementById("edit-name").value = product.name;
-      document.getElementById("edit-price").value = product.price;
-      document.getElementById("edit-old-price").value = product.oldPrice;
-      loadSuppliersToSelect("edit-supplier-id", product.supplierId);
-
-      editProductId = id;
-
-      // Hiển thị popup
-      document.getElementById("edit_popup").style.display = "block";
-      console.log(product)
-    })
-    .catch(err => {
-      console.error("Lỗi khi tải sản phẩm:", err);
-      alert("Không thể tải sản phẩm để sửa");
-    });
-  }
-
-  function closePopupEdit() {
-    const popup = document.getElementById("edit_popup");
-    popup.style.display = "none";
-    popup.classList.remove("show");
-  }
-
-  function editOrder(id) {
-  fetch(`http://localhost:8080/api/orders/${id}/next`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-  })
-    .then(res => {
-      if (!res.ok) throw new Error("Lỗi khi cập nhật đơn hàng");
-      return res.json();
-    })
-    .then(updated => {
-      alert("Cập nhật đơn hàng thành công!");
-
-      // Cập nhật dữ liệu trong danh sách `data`
-      const index = data.findIndex(p => p.id === id);
-      if (index !== -1) {
-        data[index] = updated;
-      }
-
-      renderTable(data, currentPage);
-    })
-    .catch(error => {
-      console.error("Lỗi cập nhật đơn hàng:", error);
-      alert("Không thể cập nhật đơn hàng!");
-    });
-}
-
-
   function deleteProduct(id) {
-  const confirmDelete = confirm("Bạn có chắc chắn muốn xóa đơn hàng này?");
+  const confirmDelete = confirm("Bạn có chắc chắn muốn xóa người dùng này?");
   if (!confirmDelete) return;
 
-  fetch(`http://localhost:8080/api/orders/${id}`, {
+  fetch(`http://localhost:8080/api/users/${id}`, {
     method: "DELETE"
   })
     .then(res => {
-      if (!res.ok) throw new Error("Không thể xóa đơn hàng");
+      if (!res.ok) throw new Error("Không thể xóa người dùng");
       return res.text(); // hoặc .json() nếu backend trả JSON
     })
     .then(() => {
@@ -515,63 +389,13 @@ document.addEventListener("DOMContentLoaded", () => {
       renderTable(data, currentPage);
       renderPagination(data);
 
-      alert("Đã xóa đơn hàng thành công!");
+      alert("Đã xóa người dùng thành công!");
     })
     .catch(error => {
-      console.error("Lỗi khi xoá đơn hàng:", error);
-      alert("Xóa đơn hàng thất bại!");
+      console.error("Lỗi khi xoá người dùng:", error);
+      alert("Xóa người dùng thất bại!");
     });
 }
-
-
-  function openPopup() {
-    document.getElementById("popup").style.display = "block";
-  }
-
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-
-  function addSubmit(event) {
-    console.log("hello")
-    event.preventDefault();
-
-    const userId = parseInt(document.getElementById("add_user_id").value);
-
-    const newProduct = {
-      userId,
-    };
-
-    fetch("http://localhost:8080/api/orders", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newProduct)
-    })
-      .then(res => {
-        if (!res.ok) throw new Error("Lỗi khi thêm sản phẩm");
-        return res.json();
-      })
-      .then(added => {
-        alert("Thêm sản phẩm thành công!");
-
-        // Thêm vào danh sách nội bộ + vẽ lại bảng
-        data.push(added);
-        renderTable(data, currentPage);
-        renderPagination(data);
-
-        // Reset form + đóng popup
-        event.target.reset();
-        closePopup();
-      })
-      .catch(error => {
-        console.error("Lỗi:", error);
-        alert("Không thể thêm sản phẩm!");
-      });
-    }
-
-
   // Gọi khi trang load
   renderTable(data, currentPage);
   renderPagination(data);

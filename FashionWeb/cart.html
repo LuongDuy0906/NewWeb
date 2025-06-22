@@ -77,63 +77,7 @@
                         </tr>
                     </thead>
                     <tbody id="cart-body">
-                        <!---<tr>
-                            <td><img src="assets/img/product-1-2.jpg" alt="" class="table__img"></td>
-                            <td>
-                                <h3 class="table__title">J.Crew Mercantile Women's Short-Sleeve</h3>
-                                <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
-                            </td>
-                            <td>
-                                <span class="table__price">$110</span>
-                            </td>
-                            <td>
-                                <input type="number" value="3" class="quantity">
-                            </td>
-                            <td>
-                                <span class="table__subtotal">$220</span>
-                            </td>
-                            <td>
-                                <i class="fi fi-rs-trash table__trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="assets/img/product-7-1.jpg" alt="" class="table__img"></td>
-                            <td>
-                                <h3 class="table__title">Amazon Essentials Women's Tank</h3>
-                                <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
-                            </td>
-                            <td>
-                                <span class="table__price">$110</span>
-                            </td>
-                            <td>
-                                <input type="number" value="3" class="quantity">
-                            </td>
-                            <td>
-                                <span class="table__subtotal">$220</span>
-                            </td>
-                            <td>
-                                <i class="fi fi-rs-trash table__trash"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="assets/img/product-2-1.jpg" alt="" class="table__img"></td>
-                            <td>
-                                <h3 class="table__title">Amazon Brand - Daily Ritual Women's Jersey</h3>
-                                <p class="table__description">Maboriosam in a tonto nesciung eget distingy magndapibus.</p>
-                            </td>
-                            <td>
-                                <span class="table__price">$110</span>
-                            </td>
-                            <td>
-                                <input type="number" value="3" class="quantity">
-                            </td>
-                            <td>
-                                <span class="table__subtotal">$220</span>
-                            </td>
-                            <td>
-                                <i class="fi fi-rs-trash table__trash"></i>
-                            </td>
-                        </tr>--->
+                       
                     </tbody>
                 </table>
             </div>
@@ -328,6 +272,14 @@
             cart = cart.filter(item => item.id != id);
             localStorage.setItem('cart', JSON.stringify(cart));
             location.reload();
+        }
+
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if(!user){
+            alert("Nguoi dung chua dang nhap")
+        }
+        else{
+            console.log(user.id);
         }
     </script>
 </body>

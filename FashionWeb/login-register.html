@@ -65,24 +65,23 @@
             <div class="login-register__container container grid">
                 <div class="login">
                     <h3 class="section__title">Đăng nhập</h3>
-                    <form action="" class="form grid" id="login-form">
+                    <form onsubmit="login(event)" class="form grid" id="login-form">
                         <input type="email" id="login-email" placeholder="Email" class="form__input">
                         <input type="password" id="login-password" placeholder="Mật khẩu" class="form__input">
                         <div class="form__btn">
-                            <button class="btn">Đăng nhập</button>
+                            <button class="btn" type="submit">Đăng nhập</button>
                         </div>
                     </form>
                 </div>
                 <div class="register">
                     <h3 class="section__title">Đăng ký</h3>
-                    <form action="" class="form grid" id="register-form">
+                    <form onsubmit="addAccount(event)" class="form grid" id="register-form">
                         <input type="text" placeholder="Tên người dùng" class="form__input" id="register-name">
                         <input type="email" placeholder="Email" class="form__input" id="register-email">
                         <input type="password" placeholder="Mật khẩu" class="form__input" id="register-password">
-                        <input type="password" placeholder="Xác nhận mật khẩu" class="form__input"
-                            id="register-confirm">
+                        <input type="password" placeholder="Xác nhận mật khẩu" class="form__input" id="register-confirm">
                         <div class="form__btn">
-                            <button class="btn">Đăng ký</button>
+                            <button class="btn" type="submit">Đăng ký</button>
                         </div>
                     </form>
                 </div>
@@ -161,6 +160,95 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        function addAccount(event){
+            event.preventDefault();
+
+            const name = document.getElementById("register-name").value;
+            const email = document.getElementById("register-email").value;
+            const password = document.getElementById("register-password").value;
+            const confirm = document.getElementById("register-confirm").value;
+
+            if(password != confirm){
+                alert("Mật khẩu xác nhận không trùng với mật khẩu bạn điền");
+                return;
+            }
+            else{
+                const newAccount = {
+                    name,
+                    email,
+                    password,
+                };
+
+                const account = {
+                    name,
+                    email,
+                    password,
+                    role: 'user',
+                }
+
+                fetch("http://localhost:8080/api/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newAccount)
+                    })
+                    .then(res => {
+                        if (!res.ok) return res.text().then(msg => { throw new Error(msg); });
+                        return res.json();
+                    })
+                    .then(added => {
+                        localStorage.setItem('currentUser', JSON.stringify(account));
+                        alert("Thêm người dùng thành công!");
+                        window.location.href = "accounts.html";
+                    })
+                    .catch(error => {
+                        console.error("Lỗi:", error);
+                        alert("Không thể thêm người dùng!");
+                    });
+            }
+        }
+
+        function login(event){
+            event.preventDefault();
+
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            const login = {
+                email,
+                password,
+            }
+
+            fetch("http://localhost:8080/api/users/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(login)
+                })
+                .then(res => {
+                    if (!res.ok) return res.text().then(msg => { throw new Error(msg); });
+                    return res.json();
+                })
+                .then(user => {
+                    alert("Đăng nhập thành công!");
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    const id = user.id;
+                    if(user.role === "customer"){
+                        window.location.href = "accounts.html";
+                    }
+                    if(user.role === "admin"){
+                        window.location.href = "admin-home.html";
+                    }
+                })
+                .catch(error => {
+                    console.error("Lỗi:", error);
+                    alert("Không thể thêm người dùng!");
+                });
+        }
+    </script>
 </body>
 
 </html>

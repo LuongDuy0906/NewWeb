@@ -236,32 +236,12 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <!--<script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const user = JSON.parse(localStorage.getItem('currentUser'));
-            if (!user) {
-                alert('Bạn chưa đăng nhập!');
-                window.location.href = 'login-register.html';
-                return;
-            }
-
-            // Ví dụ: hiển thị vào thẻ có id="user-info"
-            document.getElementById('user-info').innerHTML = `
-                <h3 class="tab__header">Hello ${user.name}</h3>
-                <div class="tab__body">
-                    <p class="tab__description">
-                        From your account dashboard. you can easily check $ view your recent orders, manage your shipping and billing addresses and edit your password and account details
-                     </p>
-                </div>
-              `;
-        });
-    </script>--->
     <script>
         const user = JSON.parse(localStorage.getItem('currentUser'));
         if (!user) {
             alert('Bạn chưa đăng nhập!');
             window.location.href = 'login-register.html';
-        } else if (user.role !== 'user') {
+        } else if (user.role !== 'customer') {
             alert('Chỉ người dùng mới được truy cập trang này!');
             window.location.href = 'login-register.html';
         } else {
@@ -274,18 +254,6 @@
                 </div>
               `;
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const logoutBtn = document.getElementById('logout-btn');
-            if (logoutBtn) {
-                logoutBtn.addEventListener('click', () => {
-                    if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
-                        localStorage.removeItem('currentUser');
-                        window.location.href = 'login-register.html';
-                    }
-                });
-            }
-        });
     </script>
 </body>
 
